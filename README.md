@@ -40,17 +40,28 @@ The script reads two environment variables:
 
 | Variable | Purpose |
 |---|---|
-| `ANTHROPIC_API_KEY` | Anthropic API key. The SDK reads it from the environment; the script never logs it or writes it to disk. |
+| `MSOS_ANTHROPIC_API_KEY` | Anthropic API key for the extraction calls. `ANTHROPIC_API_KEY` works as a fallback, but the project-specific name keeps the key from colliding with Claude Code's own login in a cloud session. The script never logs it or writes it to disk. |
 | `SEC_USER_AGENT` | `"Firm Name contact@firm.com"`. The [SEC fair-access policy](https://www.sec.gov/os/accessing-edgar-data) requires a declared user agent. Requests without one are blocked. |
 
 Safe ways to provide them:
 
-- **Claude Code on the web:** open the cloud environment menu in the session
-  title bar and choose **Edit**. Add both variables under environment variables
-  (or API credentials, if that section is offered). Add `www.sec.gov`,
-  `data.sec.gov` and `advisorshares.com` to the allowed network domains. Then
-  start a new session, which picks up the changes.
-- **Local shell:** `export ANTHROPIC_API_KEY=...` in your terminal. Or copy
+- **Claude Code on the web:** at [claude.ai/code](https://claude.ai/code), select
+  the cloud button showing the environment name, in the row above the message
+  box. Choose **Add cloud environment**, or hover over an existing environment
+  and select its settings (gear) icon. In the dialog:
+  - set **Network access** to **Custom**;
+  - list `www.sec.gov`, `data.sec.gov` and `advisorshares.com` under **Allowed
+    domains**, and keep **Also include default list of common package
+    managers** checked;
+  - add both variables under **Environment variables**, one `KEY=value` per line.
+
+  Variables are copied into a session when it starts, so start a new session
+  afterwards. Don't use the dialog's **API credentials** section for the
+  Anthropic key: the agent proxy never attaches stored credentials to
+  `api.anthropic.com`. Environment-variable values are readable by anyone who
+  uses the environment, so keep the key in a personal (not organization-shared)
+  environment dedicated to this project.
+- **Local shell:** `export MSOS_ANTHROPIC_API_KEY=...` in your terminal. Or copy
   `.env.example` to `.env`, which is git-ignored and loaded automatically.
 
 Use a dedicated key with a spend limit, created in the Anthropic Console, and

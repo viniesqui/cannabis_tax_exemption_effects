@@ -556,10 +556,19 @@ def test_llm_auth_error_is_fatal_and_rate_limit_is_retried():
 
 
 def test_missing_api_key_is_fatal(monkeypatch):
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    monkeypatch.delenv("ANTHROPIC_AUTH_TOKEN", raising=False)
-    with pytest.raises(m.FatalError, match="ANTHROPIC_API_KEY"):
+    for var in ("MSOS_ANTHROPIC_API_KEY", "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN"):
+        monkeypatch.delenv(var, raising=False)
+    with pytest.raises(m.FatalError, match="MSOS_ANTHROPIC_API_KEY"):
         m.LLMExtractor(model="claude-opus-5-5", effort="high", cache_dir=None)
+
+
+def test_project_specific_api_key_is_passed_explicitly(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(m.anthropic, "Anthropic", lambda **kw: captured.update(kw) or object())
+    monkeypatch.setenv("MSOS_ANTHROPIC_API_KEY", "test-key-project")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key-generic")
+    m.LLMExtractor(model="claude-opus-5-5", effort="high", cache_dir=None)
+    assert captured["api_key"] == "test-key-project"
 
 
 def test_schema_matches_pydantic_models():

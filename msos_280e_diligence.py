@@ -32,7 +32,10 @@ Pipeline
                                figures and linked to every source filing.
 
 Environment
-    ANTHROPIC_API_KEY  Anthropic API key, read by the SDK. Never hard-code it.
+    MSOS_ANTHROPIC_API_KEY  Anthropic API key for the extraction calls (falls back to
+                       ANTHROPIC_API_KEY). The project-specific name avoids colliding
+                       with Claude Code's own credentials when run in a cloud session.
+                       Never hard-code it.
     SEC_USER_AGENT     "Firm Name contact@firm.com" - required by the SEC's
                        fair-access policy (https://www.sec.gov/os/accessing-edgar-data).
 
@@ -1042,14 +1045,16 @@ class LLMExtractor:
         if client is None:
             if anthropic is None:
                 raise FatalError("The 'anthropic' package is not installed: pip install -r requirements.txt")
-            if not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
+            api_key = os.environ.get("MSOS_ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
+            if not (api_key or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
                 raise FatalError(
-                    "ANTHROPIC_API_KEY is not set. Export it in your shell or add it as an "
-                    "environment variable/secret in your runtime; never paste it into code or chat."
+                    "MSOS_ANTHROPIC_API_KEY is not set. Export it in your shell or add it as an "
+                    "environment variable in your runtime; never paste it into code or chat."
                 )
             # The SDK already retries 408/409/429/5xx and connection errors with
             # exponential backoff; max_retries widens that envelope.
-            client = anthropic.Anthropic(max_retries=5, timeout=900.0)
+            kwargs: dict[str, Any] = {"api_key": api_key} if api_key else {}
+            client = anthropic.Anthropic(max_retries=5, timeout=900.0, **kwargs)
         self.client = client
         self.model = model
         self.effort = effort
