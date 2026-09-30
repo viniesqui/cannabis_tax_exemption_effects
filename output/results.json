@@ -101,18 +101,20 @@
     "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
     "reported_net_income": 116053000.0,
     "net_income_label": "Net Income Before Non-Controlling Interest",
-    "penalty_280e": null,
-    "penalty_method": "reserve_not_attributed",
-    "penalty_lines": [],
+    "penalty_280e": 75030000.0,
+    "penalty_method": "reserve_280e",
+    "penalty_lines": [
+      "Changes in Unrecognized Tax Benefits"
+    ],
     "penalty_evidence": [
       "This is an unrecognized-tax-benefit reserve line, and the footnote says only generally that 280E 'results in unrecognized tax benefits which can cause the effective tax rate to be highly variable' without identifying the reserve, its rollforward or any amount as the 280E position."
     ],
-    "pro_forma_net_income": 116053000.0,
+    "pro_forma_net_income": 191083000.0,
     "pretax_income": 263355000.0,
     "income_tax_expense": 147302000.0,
     "total_revenue": 1175295000.0,
     "effective_tax_rate": 0.5593286628315391,
-    "pro_forma_effective_tax_rate": 0.5593286628315391,
+    "pro_forma_effective_tax_rate": 0.2744280533880124,
     "reconciliation_ties": true,
     "xbrl_check": "MISMATCH vs us-gaap:NetIncomeLoss=$114.2M",
     "uncertain_tax_position_on_280e": true,
@@ -122,7 +124,8 @@
     ],
     "extraction_notes": "All figures are in thousands of USD for FY2025. Consolidated net income before NCI is 116,053; net income attributable to GTI is 114,152. The rate reconciliation does not print a pre-tax income line, so rate_reconciliation.pretax_income is null (statement pretax income is 263,355). The reconciling lines sum exactly to the 147,302 total, and the 55.93% effective rate is printed. There is no separate Section 280E line. The 280E effect is not disaggregated and appears to be embedded in 'Changes in Unrecognized Tax Benefits' (75,030; 28.49%) and possibly in 'Nontaxable or Nondeductible Items' (10,110; 3.84%). The footnote ties 280E to unrecognized tax benefits only in general terms. The UTB rollforward shows a balance of 76,782 at the beginning of the year and 203,348 at the end, with no 280E-labelled row. Accrued interest and penalties total 25,207, and 22,806 of unrecognized tax benefits are expected to be recovered within 12 months. uncertain_tax_position_on_280e=true is an inference, not an explicit statement. The footnote does not expressly say that returns were filed treating 280E as inapplicable. Instead it states that the IRS contends 280E applies and that this results in unrecognized tax benefits, which implies the company takes a filing position contrary to 280E. 'Other Adjustments - States' (1,445) is classified as other rather than state_local because it is presented separately from the state and local tax line; analysts may choose to combine them. Income taxes paid in 2025 were 30,214, well below current tax expense of 128,582, which is consistent with UTB accrual.",
     "flags": [
-      "280E_IN_RESERVE_NOT_QUANTIFIED",
+      "280E_FROM_RESERVE_LINE",
+      "RESERVE_NARRATIVE_TIE_ONLY",
       "NET_INCOME_XBRL_MISMATCH"
     ],
     "status": "ok",

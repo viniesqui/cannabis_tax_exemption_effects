@@ -1474,6 +1474,11 @@ def build_executive_summary(results: list[CompanyResult], holdings_source: str, 
                      "as if 280E does not apply, the figure is the change in the uncertain-tax-position reserve "
                      f"{'its footnote attributes' if one else 'their footnotes attribute'} to 280E, which can "
                      "include interest, penalties and prior-year positions")
+        narrative = [r for r in reserve if "RESERVE_NARRATIVE_TIE_ONLY" in r.flags]
+        if narrative:
+            notes.append(f"{_join([r.company or r.issuer for r in narrative])} "
+                         f"{'ties its reserve' if len(narrative) == 1 else 'tie their reserves'} to 280E only "
+                         "in general terms")
     unquantified = [r for r in ok if r.penalty_method == "reserve_not_attributed"]
     if unquantified:
         one = len(unquantified) == 1

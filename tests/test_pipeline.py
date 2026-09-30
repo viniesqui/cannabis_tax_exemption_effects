@@ -452,6 +452,10 @@ def test_executive_summary_explains_reserve_and_unquantified_companies():
     assert ("for Alpha, which files as if 280E does not apply, the figure is the change in the "
             "uncertain-tax-position reserve its footnote attributes to 280E") in text
     assert "Beta reserves for 280E without attributing an amount to it and is carried at zero" in text
+    assert "general terms" not in text
+    gti.penalty_280e, gti.penalty_method, gti.flags = 75e6, "reserve_280e", ["RESERVE_NARRATIVE_TIE_ONLY"]
+    text = m.build_executive_summary([reserve, gti], m.MSOS_HOLDINGS_URL, None)
+    assert "Beta ties its reserve to 280E only in general terms" in text
 
 
 def test_executive_summary_narrowing_loss_and_ticker_override():
