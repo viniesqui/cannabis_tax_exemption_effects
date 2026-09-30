@@ -332,13 +332,13 @@ def test_reserve_line_attributed_by_its_own_footnote_marker_is_used():
     assert sel.method == "reserve_280e" and sel.amount_usd == 150_000_000
 
 
-def test_narrative_only_reserve_is_not_quantified_unless_opted_in():
+def test_narrative_only_reserve_counts_by_default_and_can_be_excluded():
     x = reserve_extraction(link="narrative_only")
     sel = m.select_280e_penalty(x)
-    assert sel.amount_usd is None and sel.method == "reserve_not_attributed"
-    assert sel.flags == ["280E_IN_RESERVE_NOT_QUANTIFIED"]  # never falls back to the nondeductible proxy
-    opted = m.select_280e_penalty(x, narrative_reserves=True)
-    assert opted.amount_usd == 150_000_000 and "RESERVE_NARRATIVE_TIE_ONLY" in opted.flags
+    assert sel.amount_usd == 150_000_000 and "RESERVE_NARRATIVE_TIE_ONLY" in sel.flags
+    excluded = m.select_280e_penalty(x, narrative_reserves=False)
+    assert excluded.amount_usd is None and excluded.method == "reserve_not_attributed"
+    assert excluded.flags == ["280E_IN_RESERVE_NOT_QUANTIFIED"]  # never falls back to the nondeductible proxy
 
 
 def test_company_reserving_for_280e_skips_the_nondeductible_proxy():
@@ -367,10 +367,12 @@ def test_apply_extraction_passes_narrative_reserve_option():
     x = reserve_extraction(link="narrative_only")
     res = m.CompanyResult(rank=1, issuer="GTI", msos_weight_pct=10)
     m.apply_extraction(res, x)
-    assert res.penalty_280e is None and res.pro_forma_net_income == res.reported_net_income
+    assert res.penalty_280e == 150_000_000 and res.penalty_evidence
     res2 = m.CompanyResult(rank=1, issuer="GTI", msos_weight_pct=10)
-    m.apply_extraction(res2, x, narrative_reserves=True)
-    assert res2.penalty_280e == 150_000_000 and res2.penalty_evidence
+    m.apply_extraction(res2, x, narrative_reserves=False)
+    assert res2.penalty_280e is None and res2.pro_forma_net_income == res2.reported_net_income
+    assert m.parse_args([]).narrative_reserves is True
+    assert m.parse_args(["--no-narrative-reserves"]).narrative_reserves is False
 
 
 def test_percent_only_reconciliation_for_loss_company():

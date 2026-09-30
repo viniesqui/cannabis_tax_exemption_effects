@@ -75,7 +75,7 @@ nothing.
 python msos_280e_diligence.py --dry-run   # all stages except the LLM; writes isolated footnotes for review
 python msos_280e_diligence.py             # full run, top 5 SEC-reporting MSOS operators
 python msos_280e_diligence.py --top-n 7 --effort xhigh
-python msos_280e_diligence.py --narrative-reserves   # also count reserves tied to 280E only in narrative
+python msos_280e_diligence.py --no-narrative-reserves   # carry reserves tied to 280E only in narrative at zero
 python msos_280e_diligence.py --tickers TCNNF,GTBIF,CURLF,VRNOF,CRLBF      # bypass the holdings file
 python msos_280e_diligence.py --holdings-file ~/Downloads/MSOS.xlsx        # use a manually downloaded file
 ```
@@ -122,11 +122,13 @@ Outputs are written to `output/`:
      that line to 280E (for example a footnote marker on it) or identifies the
      reserve as the company's 280E position (for example a rollforward row
      labelled 280E). Lines that hold only interest and penalties are excluded.
-     Reserves the footnote ties to 280E only in narrative count only with
-     `--narrative-reserves`. Flags: `280E_FROM_RESERVE_LINE`,
-     `RESERVE_INCLUDES_INTEREST_PENALTIES`, `RESERVE_NARRATIVE_TIE_ONLY`.
-  3. Nothing, when the company reserves for 280E without attributing an
-     amount to it. Its penalty is carried at zero and flagged
+     Reserves the footnote ties to 280E only in general narrative (for
+     example Green Thumb's "this results in unrecognized tax benefits") also
+     count, unless you pass `--no-narrative-reserves`. Flags:
+     `280E_FROM_RESERVE_LINE`, `RESERVE_INCLUDES_INTEREST_PENALTIES`,
+     `RESERVE_NARRATIVE_TIE_ONLY`.
+  3. Nothing, when the company reserves for 280E but no reserve line
+     qualifies. Its penalty is carried at zero and flagged
      `280E_IN_RESERVE_NOT_QUANTIFIED`.
   4. For companies with no 280E reserve, every nondeductible line, used as a
      proxy only when the footnote discusses 280E and flagged

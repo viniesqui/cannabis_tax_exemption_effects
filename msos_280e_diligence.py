@@ -1212,15 +1212,15 @@ def _line_usd(line: ReconciliationLine, multiplier: int, pretax_usd: float | Non
     return None, None
 
 
-def select_280e_penalty(x: TaxExtraction, *, narrative_reserves: bool = False) -> PenaltySelection:
+def select_280e_penalty(x: TaxExtraction, *, narrative_reserves: bool = True) -> PenaltySelection:
     """Deterministic selection of the 280E penalty from the extracted reconciliation.
 
     Preference order:
       1. lines the filing explicitly attributes to Section 280E;
       2. otherwise, uncertain-tax-position reserve lines, for operators that file as
          if 280E does not apply and reserve for the disputed tax, when the footnote
-         attributes the line, or the reserve it changes, to 280E (or, with
-         `narrative_reserves`, merely says 280E gives rise to it). Lines that carry
+         attributes the line, or the reserve it changes, to 280E, or (unless
+         `narrative_reserves` is off) merely says 280E gives rise to it. Lines that carry
          only interest and penalties are excluded;
       3. otherwise, if the company reserves for 280E, nothing: the 280E cost sits in
          a reserve the filing does not quantify, so nondeductible lines would miss it;
@@ -1346,7 +1346,7 @@ class CompanyResult:
     error: str = ""
 
 
-def apply_extraction(res: CompanyResult, x: TaxExtraction, *, narrative_reserves: bool = False) -> None:
+def apply_extraction(res: CompanyResult, x: TaxExtraction, *, narrative_reserves: bool = True) -> None:
     inc, rr = x.income_statement, x.rate_reconciliation
     m = inc.unit_multiplier
     res.fiscal_year_end = x.fiscal_year_end or res.fiscal_year_end
@@ -1590,10 +1590,10 @@ def render_markdown(results: list[CompanyResult], issuers: list[Issuer], summary
         "- **Line selection is deterministic.** The LLM only transcribes and classifies reconciliation lines and "
         "states how the footnote ties each reserve to 280E; code selects, in order: explicit 280E lines; reserve "
         "lines the footnote attributes to 280E, directly or as the company's 280E position (lines holding only interest "
-        "and penalties are excluded; reserves tied to 280E only in narrative count only with "
-        "`--narrative-reserves`, flag `RESERVE_NARRATIVE_TIE_ONLY`); nothing, when the company reserves for "
-        "280E without attributing an amount to it (flag `280E_IN_RESERVE_NOT_QUANTIFIED`, penalty carried at "
-        "zero); and, for companies with no 280E reserve, all nondeductible lines as a proxy when the footnote "
+        "and penalties are excluded; reserves tied to 280E only in general narrative also count, flag "
+        "`RESERVE_NARRATIVE_TIE_ONLY`, unless the run uses `--no-narrative-reserves`); nothing, when the company "
+        "reserves for 280E but no reserve line qualifies (flag `280E_IN_RESERVE_NOT_QUANTIFIED`, penalty carried "
+        "at zero); and, for companies with no 280E reserve, all nondeductible lines as a proxy when the footnote "
         "discusses 280E (flag `280E_NOT_SEPARATELY_LABELLED`), which can include unrelated permanent differences.",
         "- **Controls.** Reconciliation lines must sum to total tax expense; net income is cross-checked "
         "against the issuer's XBRL `ProfitLoss`/`NetIncomeLoss` facts for the same accession.",
@@ -1766,9 +1766,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--cache-dir", default=".cache")
     p.add_argument("--refresh", action="store_true", help="ignore cached holdings/submissions data")
     p.add_argument("--dry-run", action="store_true", help="run every stage except the LLM call")
-    p.add_argument("--narrative-reserves", action="store_true",
-                   help="also count uncertain-tax-position reserve lines the footnote ties to 280E only in "
-                        "narrative, without attributing an amount to 280E")
+    p.add_argument("--narrative-reserves", action=argparse.BooleanOptionalAction, default=True,
+                   help="count uncertain-tax-position reserve lines the footnote ties to 280E only in general "
+                        "narrative; --no-narrative-reserves carries those companies' penalty at zero")
     p.add_argument("-v", "--verbose", action="store_true")
     return p.parse_args(argv)
 
