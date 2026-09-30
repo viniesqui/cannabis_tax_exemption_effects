@@ -1,0 +1,36 @@
+The accompanying notes are an integral part of the Consolidated Financial Statements (as defined herein). 6 Curaleaf Holdings, Inc. Consolidated Statements of Operations (in thousands, except for share and per share amounts)
+Years Ended
+Note | December 31, 2025 | December 31, 2024
+Revenues, net:
+Retail and wholesale revenues | $1,254,821 | $1,328,331
+Management fee income | 13,314 | 5,968
+Total revenues, net | 25 | 1,268,135 | 1,334,299
+Cost of goods sold | 10, 11 | 637,113 | 693,522
+Gross profit | 631,022 | 640,777
+Operating expenses:
+Selling, general and administrative | 20 | 428,442 | 418,534
+Share-based compensation | 19 | 35,736 | 25,696
+Depreciation and amortization | 10, 11, 13 | 141,394 | 171,804
+Total operating expenses | 605,572 | 616,034
+Income from continuing operations | 25,450 | 24,743
+Other income (expense):
+Interest income | 663 | 776
+Interest expense | 16 | ( 56,753 ) | ( 59,353 )
+Interest expense related to lease liabilities and financial obligations | 11, 12 | ( 44,076 ) | ( 41,263 )
+Impairment loss | 10, 11, 12 | ( 9,080 ) | ( 54,245 )
+Other income, net | 22 | 5,582 | 15,984
+Total other expense, net | ( 103,664 ) | ( 138,101 )
+Loss before provision for income taxes | ( 78,214 ) | ( 113,358 )
+Provision for income taxes | 23 | ( 123,689 ) | ( 98,251 )
+Net loss from continuing operations | ( 201,903 ) | ( 211,609 )
+Net loss from discontinued operations | 6 | ( 26,250 ) | ( 10,398 )
+Net loss | ( 228,153 ) | ( 222,007 )
+Less: Net income (loss) attributable to non-controlling interest | 2, 18 | 2,917 | ( 6,584 )
+Net loss attributable to Curaleaf Holdings, Inc. | $( 231,070 ) | $( 215,423 )
+Per share – basic and diluted (2) :
+Net loss per share from continuing operations⁽¹⁾ | $( 0.32 ) | $( 0.31 )
+Net loss per share from discontinued operations | ( 0.03 ) | ( 0.01 )
+Net loss per share attributable to Curaleaf Holdings, Inc. (1) | 24 | $( 0.35 ) | $( 0.32 )
+Weighted average common shares outstanding (2) | 24 | 762,090,951 | 740,825,099
+(1) Certain non-controlling interests are redeemable at the option of the holders. When the estimated redemption value exceeds the recorded amount, the excess is charged directly to Shareholders' equity on the Consolidated Balance Sheets. This adjustment does not affect the Company's reported net loss; however, under ASC 480-10, Distinguishing Liabilities from Equity , the excess redemption value must be included in the calculation of earnings per share - basic and diluted. See Note 2 — Basis of presentation and consolidation and Note 24 — Earnings per share for further details.
+(2) As a result of the Company’s net losses from its continuing and discontinued operations for the years ended December 31, 2025 and 2024, the calculation of diluted net loss per share for each period presented gives no consideration to potentially anti-dilutive securities; and as such, is the same as basic net loss per share for each period presented.

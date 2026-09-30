@@ -1,0 +1,118 @@
+Note 23 — Income taxes
+
+In December 2023, the FASB issued ASU 2023-09, which enhances the disclosure requirements for income taxes. The Company adopted ASU 2023-09 on a prospective basis for the annual reporting period ended December 31, 2025.
+Accordingly, the comparative prior period has not been recast to reflect the new disclosure requirements. See Note 3 — Significant accounting policies for further detail.
+
+The Company’s Loss before provision for income taxes includes the following components for the years ended December 31, 2025 and 2024:
+
+Years Ended
+December 31, 2025 | December 31, 2024
+Domestic | $( 67,069 ) | $( 87,443 )
+Foreign | ( 11,145 ) | ( 25,915 )
+Total | $( 78,214 ) | $( 113,358 )
+
+The Company’s Provision for income taxes for the years ended December 31, 2025 and 2024 consisted of the following:
+
+Years Ended
+December 31, 2025 | December 31, 2024
+Current:
+Federal | $138,070 | $135,598
+State | 21,682 | 15,540
+Foreign | 3,800 | 1,884
+Total current income tax expense | 163,552 | 153,022
+Deferred:
+Federal | $( 19,726 ) | $( 24,744 )
+State | ( 14,334 ) | ( 25,635 )
+Foreign | ( 5,803 ) | ( 4,392 )
+Total deferred income tax expense | ( 39,863 ) | ( 54,771 )
+Provision for income taxes | $123,689 | $98,251
+A reconciliation of the U.S. federal statutory income tax rate to the Company’s effective tax rate for the year ended December 31, 2025 is as follows:
+
+Year Ended
+December 31, 2025
+$%
+Benefit from income taxes computed using U.S. federal statutory income tax rate (1) | $( 16,416 ) | 21%
+State and local income tax, net of federal income tax effect (2) | 7,562 | ( 10 )%
+Impact of U.S. tax on foreign operations | 1,632 | ( 2 )%
+Foreign tax effects | 1,022 | ( 1 )%
+Effect of change in tax law or rates enacted in current period | ( 1,192 ) | 2%
+Share-based compensation | 2,616 | ( 3 )%
+Non-deductible expenses | 3,117 | ( 4 )%
+Increase in uncertain tax position (3) | 97,843 | ( 125 )%
+Increase in valuation allowance | 31,759 | ( 41 )%
+Penalties and interest | 1,593 | ( 2 )%
+Other | ( 5,847 ) | 7%
+Provision for income taxes | $123,689 | ( 158 )%
+(1) As the Company’s operations are primarily based in the United States, the tax rate reconciliation has been prepared using the U.S. federal statutory tax rate of 21%.
+(2) Primarily represents income tax expense generated in Pennsylvania, Maryland, Illinois and Florida.
+(3) Primarily related to the Company's Section 280E Position.
+
+A reconciliation of the U.S. federal statutory income tax rate to the Company’s effective tax rate for the year ended December 31, 2024 is as follows:
+
+Year Ended
+December 31, 2024
+$%
+Benefit from income taxes computed using U.S. federal statutory income tax rate (1) | $( 23,805 ) | 21%
+State income taxes, net of federal income tax benefit | ( 22,643 ) | 20%
+Impact of U.S. tax on foreign operations | 706 | ( 1 )%
+Share-based compensation | 944 | ( 1 )%
+Non-deductible expenses | 2,204 | ( 2 )%
+Increase in uncertain tax position | 121,969 | ( 108 )%
+Increase in valuation allowance | 15,424 | ( 14 )%
+Penalties and interest | 16,216 | ( 14 )%
+Other | ( 12,764 ) | 11%
+Provision for income taxes | $98,251 | ( 87 )%
+(1) As the Company’s operations are primarily based in the United States, the tax rate reconciliation has been prepared using the U.S. federal statutory tax rate of 21%.
+Cash paid for income taxes, net of refunds received, by jurisdiction for the year ended December 31, 2025 was as follows:
+
+Year Ended
+Jurisdiction: | December 31, 2025
+Federal | $9,575
+State | 16,894
+Foreign | 589
+Cash paid for income taxes, net of refunds received | $27,058
+
+The components of the Company’s deferred tax assets and liabilities as of December 31, 2025 and 2024 were as follows:
+
+As of
+December 31, 2025 | December 31, 2024
+Deferred tax assets:
+Net operating loss carryforward | $218,402 | $202,940
+163j interest carryovers | 86,869 | 71,132
+Stock compensation | 14,773 | 10,307
+Accrued and prepaid expenses | 2,348 | 2,088
+Other | 165 | 60
+Total deferred tax assets | 322,557 | 286,527
+Deferred tax liabilities:
+Depreciation and amortization | ( 232,329 ) | ( 264,588 )
+Inventory | ( 2,746 ) | ( 1,904 )
+Total deferred tax liabilities | ( 235,075 ) | ( 266,492 )
+Valuation allowance (1) | ( 299,041 ) | ( 264,407 )
+Net deferred tax liabilities | $( 211,559 ) | $( 244,372 )
+(1) As of December 31, 2025 and 2024, the Company maintained a valuation allowance against deferred tax assets related to certain U.S. federal and state operations as well as its international operations in France, the U.K., Canada and Germany.
+
+At December 31, 2025, the Company had federal and state tax loss carryforwards of $645.0 million, which expire between 2026 and 2044. At December 31, 2025 the Company had foreign tax loss carryforwards of $27.2 million, which will begin to expire starting 2035 through 2045. At December 31, 2025, the Company had federal and state tax loss carryforwards of $681.5 million which will never expire. At December 31, 2025, the Company had foreign tax loss carryforwards of $93.1 million, which will never expire.
+
+The Company accounts for the undistributed earnings of the Company as a temporary difference, except for the undistributed earnings of its foreign subsidiaries that are deemed to be indefinitely reinvested in foreign jurisdictions. The Company considers the earnings and profits of its foreign subsidiaries to be indefinitely reinvested.
+The following table summarizes the activity within the Company’s unrecognized tax benefits from continuing operations for the years ended December 31, 2025 and 2024:
+
+As of
+December 31, 2025 | December 31, 2024
+Balance at beginning of the year | $432,341 | $56,931
+Additions based on tax positions related to the current year | 119,792 | 130,790
+Additions based on refunds requested but not yet received related to prior years | 36,389 | 91,645
+Additions based on refunds received related to prior years | 16,176 | 9,983
+Additions and subtractions for tax positions of prior years | ( 2,339 ) | 164,249
+Subtractions based on acquisitions | — | ( 10,348 )
+Lapse of statute of limitations | ( 14,533 ) | ( 10,909 )
+Balance at the end of the year | $587,826 | $432,341
+
+As of December 31, 2025 and 2024, $1.8 million and $13.1 million, respectively, of these unrecognized tax benefits were recorded as a result of acquisitions and are subject to indemnifications. As the Company has collateral and/or other deferred consideration sufficient to cover any potential resulting indemnification liability, the Company recognized a non-current tax receivable within Income tax receivable on the Consolidated Balance Sheets. As of December 31, 2025 and 2024, included in the balances of unrecognized tax benefits, is $586.0 million and $419.2 million, respectively, of unrecognized tax benefits that if recognized, would impact the Company’s effective tax rate.
+
+As of December 31, 2025, the Company recognized accrued interest and penalties of $25.4 million and $69.8 million for its uncertain tax positions as a component of Provision for income taxes and Other long-term liabilities, respectively. As of December 31, 2024, the Company recognized accrued interest and penalties of $16.1 million, $4.9 million and $19.2 million as a component of Provision for income taxes, Income tax payable and Other long-term liabilities, respectively.
+
+The Company files its income tax returns as prescribed by the tax laws of the jurisdictions in which it operates. In the normal course of business, the Company is subject to examination by federal, state and foreign taxing authorities, where applicable. As of December 31, 2025, the Company is under audit for years ranging from 2020 to 2023 by the IRS, a few U.S. states and in Canada. The statute of limitations for federal, state and foreign taxing jurisdictions are open from tax year 2022.
+
+Global Minimum Tax Rules - Pillar Two
+Numerous foreign jurisdictions have enacted or are in the process of enacting legislation to adopt a minimum effective tax rate, as described in the Global Anti-Base Erosion Model Rules (otherwise known as Pillar Two) issued by the Organization for Economic Co-operation and Development. Under Pillar Two, a minimum effective tax rate of 15% would apply to multinational companies with consolidated revenues above €750 million. Pillar Two became effective for fiscal years beginning on or after January 1, 2024, in several jurisdictions in which the Company operates. Upon enactment, Pillar Two did not have a material impact on the Company’s Consolidated Financial Statements, and there was no material impact to the Company’s consolidated financial position, results of operations or cash flows
+.

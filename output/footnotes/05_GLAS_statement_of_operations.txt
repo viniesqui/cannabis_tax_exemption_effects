@@ -1,0 +1,32 @@
+See accompanying notes to consolidated financial statements. - 2 - GLASS HOUSE BRANDS INC. Consolidated Statements of Operations (Amounts Expressed in United States Dollars in Thousands, Except Share and Per Share Data, Unless Otherwise Stated)
+Year Ended December 31,
+2025 | 2024
+Revenues, Net | $181,984 | $200,898
+Cost of Goods Sold (Exclusive of Depreciation and Amortization Shown Separately Below) | 105,024 | 103,505
+Gross Profit | 76,960 | 97,393
+Operating Expenses:
+General and Administrative | 64,098 | 60,126
+Sales and Marketing | 2,669 | 2,418
+Professional Fees | 9,062 | 7,768
+Depreciation and Amortization | 15,764 | 15,044
+Impairment Expense for Intangible Assets | 1,900 | 6,300
+Total Operating Expenses | 93,493 | 91,656
+Income (Loss) from Operations | ( 16,533 ) | 5,737
+Other (Income) Expense:
+Interest Expense | 7,058 | 9,184
+Interest Income | ( 288 ) | —
+Gain on Equity Method Investments | ( 84 ) | ( 14 )
+(Gain) Loss on Change in Fair Value of Derivative Asset and Liability | 2,070 | ( 690 )
+Gain on Change in Fair Value of Contingent Liabilities and Shares Payable | — | ( 13,724 )
+Loss on Extinguishment of Debt | 292 | —
+Other Income, Net | ( 8,563 ) | ( 238 )
+Total Other (Income) Expense, Net | 485 | ( 5,482 )
+Income (Loss) from Operations Before Provision for Income Taxes | ( 17,018 ) | 11,219
+Provision for Income Taxes | 11,934 | 10,498
+Net Income (Loss) | ( 28,952 ) | 721
+Net Income Attributable to Non-Controlling Interest | 707 | 202
+Net Income (Loss) Attributable to the Company | $( 29,659 ) | $519
+Loss Per Share - Basic | $( 0.55 ) | $( 0.21 )
+Loss Per Share - Diluted | $( 0.55 ) | $( 0.21 )
+Weighted-Average Shares Outstanding - Basic | 81,935,989 | 75,229,075
+Weighted-Average Shares Outstanding - Diluted | 81,935,989 | 75,229,075

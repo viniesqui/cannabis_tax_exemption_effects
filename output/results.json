@@ -1,0 +1,212 @@
+[
+  {
+    "rank": 1,
+    "issuer": "TRULIEVE CANNABIS CORP",
+    "msos_weight_pct": 31.18414674892994,
+    "company": "Trulieve Cannabis Corp.",
+    "ticker": "TRLV",
+    "cik": 1754195,
+    "form": "10-K",
+    "accession": "0001754195-26-000019",
+    "fiscal_year_end": "2025-12-31",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1754195/000175419526000019/tcnnf-20251231.htm",
+    "document_url": "https://www.sec.gov/Archives/edgar/data/1754195/000175419526000019/tcnnf-20251231.htm",
+    "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
+    "reported_net_income": -122248000.0,
+    "net_income_label": "Net loss",
+    "penalty_280e": 15336000.0,
+    "penalty_method": "nondeductible_proxy",
+    "penalty_lines": [
+      "Political contributions",
+      "Stock compensation",
+      "Excess compensation",
+      "Other"
+    ],
+    "pro_forma_net_income": -106912000.0,
+    "pretax_income": 91473000.0,
+    "income_tax_expense": 208109000.0,
+    "total_revenue": 1181180000.0,
+    "effective_tax_rate": 2.2750866375870475,
+    "pro_forma_effective_tax_rate": 2.1074306079389546,
+    "reconciliation_ties": true,
+    "xbrl_check": "ties to us-gaap:ProfitLoss",
+    "uncertain_tax_position_on_280e": true,
+    "section_280e_quotes": [
+      "The IRS has taken the position that cannabis companies are subject to the limits of Internal Revenue Code (\"IRC\") Section 280E for U.S. federal income tax purposes.",
+      "The Company has taken a position that Section 280E does not preclude it from deducting ordinary and necessary business expenditures on its tax returns.",
+      "Of the $ 75.3 million and $ 29.6 million in accrued interest as of December 31, 2025 and 2024, $ 65.8 million and $ 23.5 million relates to the Company's IRC Section 280E tax position, as of December 31, 2025 and 2024, respectively."
+    ],
+    "extraction_notes": "All figures in thousands. Net income is the consolidated 'Net loss' of (122,248), which includes discontinued operations loss of (5,612); net loss from continuing operations is (116,636) and net loss attributable to common shareholders is (116,381). The 2025 reconciliation is presented under ASU 2023-09 in amounts and percentages and begins with tax at the statutory rate (19,209); it does not print pre-tax income, so rate_reconciliation.pretax_income is null (the separate domestic/foreign pre-tax table and the income statement show 91,473). 'Nontaxable or nondeductible items' is a header with sub-lines (Political contributions, Stock compensation, Excess compensation, Other); sub-lines are reported and no subtotal is printed. No reconciling line is explicitly labeled as Section 280E. The 280E effect is embedded in 'Changes in unrecognized tax benefits, inclusive of interest and penalties' (172,804; 188.9%) because the company files returns deducting ordinary and necessary expenses as if 280E does not apply and records a UTP liability. The narrative states that $630.3 million of the $668,375 thousand UTP liability relates to the 280E position, excluding $93.8 million of prior payments claimed as overpayments. Accrued interest of $65.8 million relates to 280E. The line amount is not split between 280E and non-280E components, so the 280E portion of the line cannot be isolated. A proposed IRS penalty of approximately $38.1 million is not included in the UTP liability. The line items sum to the printed total of 208,109; the effective rate is 227.5%. Comparative 2024 and 2023 reconciliations use the pre-ASU 2023-09 format and were ignored.",
+    "flags": [
+      "280E_NOT_SEPARATELY_LABELLED"
+    ],
+    "status": "ok",
+    "error": ""
+  },
+  {
+    "rank": 2,
+    "issuer": "CURALEAF HOLDINGS INC",
+    "msos_weight_pct": 28.47011340606694,
+    "company": "Curaleaf Holdings, Inc.",
+    "ticker": "CURLF",
+    "cik": 1756770,
+    "form": "40-F",
+    "accession": "0001756770-26-000019",
+    "fiscal_year_end": "2025-12-31",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1756770/000175677026000019/curlf-20251231.htm",
+    "document_url": "https://www.sec.gov/Archives/edgar/data/1756770/000175677026000019/curlf-20251231_d2.htm",
+    "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
+    "reported_net_income": -228153000.0,
+    "net_income_label": "Net loss",
+    "penalty_280e": 97843000.0,
+    "penalty_method": "explicit_280e",
+    "penalty_lines": [
+      "Increase in uncertain tax position (3)"
+    ],
+    "pro_forma_net_income": -130310000.0,
+    "pretax_income": -78214000.0,
+    "income_tax_expense": 123689000.0,
+    "total_revenue": 1268135000.0,
+    "effective_tax_rate": -1.5814176490142429,
+    "pro_forma_effective_tax_rate": -0.3304523486843788,
+    "reconciliation_ties": true,
+    "xbrl_check": "ties to us-gaap:ProfitLoss",
+    "uncertain_tax_position_on_280e": true,
+    "section_280e_quotes": [
+      "Primarily related to the Company's Section 280E Position."
+    ],
+    "extraction_notes": "Amounts in thousands. Income statement prints 'Provision for income taxes' as (123,689) on the face of the statement; footnote confirms it is an expense of $123,689, reported here as positive. Net loss of (228,153) is the consolidated line before NCI and includes (26,250) of discontinued operations; net loss from continuing operations is (201,903). The rate reconciliation does not print a pre-tax income line (pretax_income null); income statement pre-tax loss is (78,214). ASU 2023-09 adopted prospectively for 2025. The $97,843 'Increase in uncertain tax position' line is classified section_280e because footnote (3) attributes it 'Primarily' to the Company's Section 280E Position; it is a UTP reserve line, so it may also include non-280E UTP amounts that are not separately quantified. Percentages are printed rounded to whole numbers and sum-check against the (158)% effective rate; amounts sum exactly to $123,689. Penalties and interest ($1,593) classified as uncertain_tax_positions based on narrative tying accrued interest/penalties to UTPs. uncertain_tax_position_on_280e set true because the footnote ties the UTP increase to the 'Section 280E Position' and the UTB rollforward includes additions for refunds requested and received on prior years (UTB balance $587,826 at year end); the footnote excerpt itself does not define the Section 280E Position (a defined term elsewhere in the filing). No standalone 280E nondeductible-expense line appears; 'Non-deductible expenses' ($3,117) is not tied to 280E.",
+    "flags": [],
+    "status": "ok",
+    "error": ""
+  },
+  {
+    "rank": 3,
+    "issuer": "GREEN THUMB INDUSTRIES",
+    "msos_weight_pct": 16.818731351181405,
+    "company": "Green Thumb Industries Inc.",
+    "ticker": "GTBIF",
+    "cik": 1795139,
+    "form": "10-K",
+    "accession": "0001193125-26-071672",
+    "fiscal_year_end": "2025-12-31",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1795139/000119312526071672/gtbif-20251231.htm",
+    "document_url": "https://www.sec.gov/Archives/edgar/data/1795139/000119312526071672/gtbif-20251231.htm",
+    "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
+    "reported_net_income": 116053000.0,
+    "net_income_label": "Net Income Before Non-Controlling Interest",
+    "penalty_280e": 10110000.0,
+    "penalty_method": "nondeductible_proxy",
+    "penalty_lines": [
+      "Nontaxable or Nondeductible Items"
+    ],
+    "pro_forma_net_income": 126163000.0,
+    "pretax_income": 263355000.0,
+    "income_tax_expense": 147302000.0,
+    "total_revenue": 1175295000.0,
+    "effective_tax_rate": 0.5593286628315391,
+    "pro_forma_effective_tax_rate": 0.5209394163771335,
+    "reconciliation_ties": true,
+    "xbrl_check": "MISMATCH vs us-gaap:NetIncomeLoss=$114.2M",
+    "uncertain_tax_position_on_280e": true,
+    "section_280e_quotes": [
+      "As the Company operates in the cannabis industry, the IRS contends the Company is subject to IRC Section 280E under which the Company is only allowed to deduct expenses directly related to sales of product.",
+      "This results in unrecognized tax benefits which can cause the effective tax rate to be highly variable and may not necessarily correlate with pre-tax income or loss."
+    ],
+    "extraction_notes": "Income statement figures taken from the selected consolidated results table (in thousands) presented alongside Item 8; the consolidated pre-NCI line 'Net Income Before Non-Controlling Interest' ($116,053K) was used, with $1,901K attributable to NCI and $114,152K attributable to GTI. Rate reconciliation (dollars in thousands and percentages) does not print pre-tax income; the statutory line $55,305K is consistent with 21% of $263,355K but reconciliation pretax_income is left null as not printed. Line items sum to the $147,302K total (55.93% ETR). No line in the reconciliation is explicitly labeled or footnoted as Section 280E; 280E effects are likely embedded in 'Nontaxable or Nondeductible Items' ($10,110K, 3.84%) and/or 'Changes in Unrecognized Tax Benefits' ($75,030K, 28.49%), but the filing does not quantify the split, so the nondeductible line is classified nondeductible_other. The footnote states the IRS contends the Company is subject to 280E and that this 'results in unrecognized tax benefits', implying the Company files taking the position that 280E does not apply; it does not explicitly state that returns or refund claims were filed. UTB balance rose from $76,782K to $203,348K in 2025 (prior-period gross increases $64,042K; current-period $84,975K); accrued interest and penalties $25,207K; $22,806K of UTBs expected to be recovered within 12 months. Income taxes paid in 2025 were only $30,214K versus $147,302K provision. 'Other Adjustments - States' classified as state_local (judgment call; could alternatively be 'other'). Percentages shown in the table for 2025 (e.g., state 5.37%) are transcribed as printed even where they do not precisely equal amount/pretax.",
+    "flags": [
+      "280E_NOT_SEPARATELY_LABELLED",
+      "NET_INCOME_XBRL_MISMATCH"
+    ],
+    "status": "ok",
+    "error": ""
+  },
+  {
+    "rank": 4,
+    "issuer": "VERANO HOLDINGS CORP",
+    "msos_weight_pct": 5.525665293262953,
+    "company": "Verano Holdings Corp.",
+    "ticker": "VRNO",
+    "cik": 1848416,
+    "form": "10-K",
+    "accession": "0001628280-26-017011",
+    "fiscal_year_end": "2025-12-31",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1848416/000162828026017011/vrnof-20251231.htm",
+    "document_url": "https://www.sec.gov/Archives/edgar/data/1848416/000162828026017011/vrnof-20251231.htm",
+    "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
+    "reported_net_income": -257908000.0,
+    "net_income_label": "Net Loss Attributable to Verano Holdings Corp. & Subsidiaries",
+    "penalty_280e": 18571000.0,
+    "penalty_method": "nondeductible_proxy",
+    "penalty_lines": [
+      "Permanent Impacts of Impairments",
+      "Penalties and Interest",
+      "Income from Investments",
+      "Other Permanent Differences"
+    ],
+    "pro_forma_net_income": -239337000.0,
+    "pretax_income": -166230000.0,
+    "income_tax_expense": 91678000.0,
+    "total_revenue": 821504000.0,
+    "effective_tax_rate": -0.5515129639655898,
+    "pro_forma_effective_tax_rate": -0.439794260963725,
+    "reconciliation_ties": true,
+    "xbrl_check": "ties to us-gaap:ProfitLoss",
+    "uncertain_tax_position_on_280e": true,
+    "section_280e_quotes": [
+      "The IRS has taken the position that cannabis companies are subject to the limits of Section 280E of the Code for U.S. federal income tax purposes, under which, they are only allowed to deduct expenses directly related to costs of goods sold.",
+      "The Company has taken a position that its deduction of ordinary and necessary business expenses is not limited by Section 280E of the Code.",
+      "During the year ended December 31, 2024, the Company recorded an uncertain tax liability in uncertain tax positions on the Consolidated Balance Sheet for tax positions taken based on legal interpretations that challenge the Company's tax liability under Section 280E of the Code (\u201c280E Position\u201d)."
+    ],
+    "extraction_notes": "All amounts are in thousands. The statement of operations has no separate consolidated net loss line before non-controlling interests. The only net loss line is 'Net Loss Attributable to Verano Holdings Corp. & Subsidiaries' (-257,908), which equals pre-tax loss less provision, so it was used. The income statement prints Provision For Income Taxes as (91,678) even though it is an expense; the footnote total confirms $91,678 of expense, so it is reported as positive. The 2025 rate reconciliation follows prospective ASU 2023-09 adoption. Percentages are printed relative to a pre-tax loss, so items that increase expense show negative percentages; they are transcribed as printed. The 'Nontaxable or Nondeductible Items' header carries no subtotal amount. Sub-lines from Uncertain Tax Positions through Other Permanent Differences appear beneath it, but indentation is ambiguous; UTP was classified separately as uncertain_tax_positions. Line items sum exactly to the $91,678 total. There is no explicitly labeled 280E line in 2025; the 2023 comparative showed 'Nondeductible 280E' of 79,731. The company takes the position that 280E does not limit its deductions and carries an uncertain tax liability for the '280E Position' ($378,261 at 12/31/2025; gross unrecognized tax benefits $473,664). The 2025 UTP reconciling line (113,291, including penalties and interest) therefore economically represents the 280E exposure, but it was not classified as section_280e because the line is labeled as a UTP reserve. Footnote (1) on the statutory line says Florida state taxes make up the majority of 'this category'; this appears to be a mis-placed ASU 2023-09 state-tax disclosure. The company is under IRS audit for 2021-2022.",
+    "flags": [
+      "280E_NOT_SEPARATELY_LABELLED"
+    ],
+    "status": "ok",
+    "error": ""
+  },
+  {
+    "rank": 5,
+    "issuer": "GLASS HOUSE BRANDS INC",
+    "msos_weight_pct": 5.047957697624551,
+    "company": "Glass House Brands Inc.",
+    "ticker": "GLAS",
+    "cik": 1848731,
+    "form": "40-F",
+    "accession": "0001848731-26-000015",
+    "fiscal_year_end": "2025-12-31",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1848731/000184873126000015/glasf-20251231.htm",
+    "document_url": "https://www.sec.gov/Archives/edgar/data/1848731/000184873126000015/glasf-20251231_d2.htm",
+    "footnote_method": "ixbrl:us-gaap:IncomeTaxDisclosureTextBlock",
+    "reported_net_income": -28952000.0,
+    "net_income_label": "Net Income (Loss)",
+    "penalty_280e": 120000.0,
+    "penalty_method": "nondeductible_proxy",
+    "penalty_lines": [
+      "Employee Retention Tax Credits",
+      "Non-deductible executive compensation (Section 162(m))",
+      "Change in Fair Value of Contingent Consideration",
+      "Other Permanent Differences"
+    ],
+    "pro_forma_net_income": -28832000.0,
+    "pretax_income": -17018000.0,
+    "income_tax_expense": 11934000.0,
+    "total_revenue": 181984000.0,
+    "effective_tax_rate": -0.701257492067223,
+    "pro_forma_effective_tax_rate": -0.6942061346809261,
+    "reconciliation_ties": true,
+    "xbrl_check": "ties to us-gaap:ProfitLoss",
+    "uncertain_tax_position_on_280e": true,
+    "section_280e_quotes": [
+      "As the Company operates in the legalized cannabis industry, it is subject to the limits of Internal Revenue Code (\u201cIRC\u201d) Section 280E (\u201cSection 280E\u201d) for U.S. federal income tax purposes under which the Company is only allowed to deduct certain expenses directly related to the cost of goods sold.",
+      "Based on legal interpretation, it is the Company\u2019s position that it does not owe taxes attributable to the application of Section 280E.",
+      "The Company included in the balance of total unrecognized tax benefits as of December 31, 2025 and 2024 a potential benefit of $31.7 million and $20.9 million, respectively, that, if recognized, would impact the effective tax rate on income from operations related to its tax positions based on legal interpretations that challenge the Company\u2019s tax liability under Section 280E."
+    ],
+    "extraction_notes": "All figures are in USD thousands for FY2025. Net income is the consolidated line before NCI (-28,952); the amount attributable to the Company is -29,659.\n\nThe reconciliation does not print a pre-tax income figure, so pretax_income is null there. The statement of operations shows -17,018, consistent with the 21% statutory line of -3,574.\n\nBecause pre-tax is a loss, the printed percentages carry inverted signs relative to the amounts (e.g., the UTB line is 10,870 / (63.9)%). Percentages are reported as printed and amounts are sign-normalised. The effective rate is printed as (70.1)%.\n\nThe line items sum to the 11,934 total.\n\nNo line is labelled Section 280E. The 280E effect appears in 'Changes in Unrecognized Tax Benefits' (10,870). This exactly equals the 'IRS Section 280E Positions' addition in the UTB rollforward, so it is classified as uncertain_tax_positions but is economically the 280E charge.\n\nThe company takes the position that 280E does not apply and carries a total UTB of $31.7M (FY2024: $20.9M). The 'Other' line (6,006) is unexplained and may also contain 280E-related or other effects; it cannot be determined from the filing.\n\nThe heading rows 'Effect of Changes in Tax Laws or Rates Enacted in the Current Period', 'Changes in Valuation Allowances' and 'Nontaxable or Nondeductible Items' carry no amounts and were omitted as headers. 'Over Accrual of Prior Year Taxes' and 'Return to Provision' appear under the tax-law-change heading, as printed.\n\nZero ('\u2014') lines are included with amount 0.\n\nThe entire provision is current; deferred is nil because of a full valuation allowance of 40,995. One 2019 pre-acquisition federal return (Natural Healing Center LLC) is under IRS examination.",
+    "flags": [
+      "280E_NOT_SEPARATELY_LABELLED"
+    ],
+    "status": "ok",
+    "error": ""
+  }
+]

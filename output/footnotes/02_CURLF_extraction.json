@@ -1,0 +1,114 @@
+{
+  "fiscal_year_end": "2025-12-31",
+  "income_statement": {
+    "unit_multiplier": 1000,
+    "net_income_label": "Net loss",
+    "net_income": -228153.0,
+    "pretax_income": -78214.0,
+    "income_tax_expense": 123689.0,
+    "total_revenue": 1268135.0
+  },
+  "rate_reconciliation": {
+    "found": true,
+    "unit_multiplier": 1000,
+    "presentation": "amounts_and_percentages",
+    "statutory_rate_percent": 21.0,
+    "pretax_income": null,
+    "total_income_tax_expense": 123689.0,
+    "line_items": [
+      {
+        "label": "Benefit from income taxes computed using U.S. federal statutory income tax rate (1)",
+        "category": "statutory",
+        "amount": -16416.0,
+        "percent": 21.0,
+        "increases_tax_expense": false,
+        "rationale": "Tax computed on pre-tax loss at the 21% U.S. federal statutory rate."
+      },
+      {
+        "label": "State and local income tax, net of federal income tax effect (2)",
+        "category": "state_local",
+        "amount": 7562.0,
+        "percent": -10.0,
+        "increases_tax_expense": true,
+        "rationale": "State and local income tax line, footnoted as primarily Pennsylvania, Maryland, Illinois and Florida."
+      },
+      {
+        "label": "Impact of U.S. tax on foreign operations",
+        "category": "other",
+        "amount": 1632.0,
+        "percent": -2.0,
+        "increases_tax_expense": true,
+        "rationale": "U.S. tax on foreign operations is a cross-border item, not state, 280E, VA or UTP."
+      },
+      {
+        "label": "Foreign tax effects",
+        "category": "other",
+        "amount": 1022.0,
+        "percent": -1.0,
+        "increases_tax_expense": true,
+        "rationale": "Foreign jurisdiction rate effects fall outside the named categories."
+      },
+      {
+        "label": "Effect of change in tax law or rates enacted in current period",
+        "category": "other",
+        "amount": -1192.0,
+        "percent": 2.0,
+        "increases_tax_expense": false,
+        "rationale": "Tax law/rate change effect is not a nondeductible, state, VA or UTP item."
+      },
+      {
+        "label": "Share-based compensation",
+        "category": "nondeductible_other",
+        "amount": 2616.0,
+        "percent": -3.0,
+        "increases_tax_expense": true,
+        "rationale": "Share-based compensation permanent difference not tied to 280E."
+      },
+      {
+        "label": "Non-deductible expenses",
+        "category": "nondeductible_other",
+        "amount": 3117.0,
+        "percent": -4.0,
+        "increases_tax_expense": true,
+        "rationale": "Generic non-deductible expenses with no label, footnote or narrative attributing them to 280E."
+      },
+      {
+        "label": "Increase in uncertain tax position (3)",
+        "category": "section_280e",
+        "amount": 97843.0,
+        "percent": -125.0,
+        "increases_tax_expense": true,
+        "rationale": "Footnote marker (3) on this line states it is \"Primarily related to the Company's Section 280E Position.\""
+      },
+      {
+        "label": "Increase in valuation allowance",
+        "category": "valuation_allowance",
+        "amount": 31759.0,
+        "percent": -41.0,
+        "increases_tax_expense": true,
+        "rationale": "Change in valuation allowance against deferred tax assets."
+      },
+      {
+        "label": "Penalties and interest",
+        "category": "uncertain_tax_positions",
+        "amount": 1593.0,
+        "percent": -2.0,
+        "increases_tax_expense": true,
+        "rationale": "Footnote states accrued interest and penalties are recognized for its uncertain tax positions as a component of Provision for income taxes."
+      },
+      {
+        "label": "Other",
+        "category": "other",
+        "amount": -5847.0,
+        "percent": 7.0,
+        "increases_tax_expense": false,
+        "rationale": "Unspecified residual reconciling item."
+      }
+    ]
+  },
+  "section_280e_quotes": [
+    "Primarily related to the Company's Section 280E Position."
+  ],
+  "uncertain_tax_position_on_280e": true,
+  "extraction_notes": "Amounts in thousands. Income statement prints 'Provision for income taxes' as (123,689) on the face of the statement; footnote confirms it is an expense of $123,689, reported here as positive. Net loss of (228,153) is the consolidated line before NCI and includes (26,250) of discontinued operations; net loss from continuing operations is (201,903). The rate reconciliation does not print a pre-tax income line (pretax_income null); income statement pre-tax loss is (78,214). ASU 2023-09 adopted prospectively for 2025. The $97,843 'Increase in uncertain tax position' line is classified section_280e because footnote (3) attributes it 'Primarily' to the Company's Section 280E Position; it is a UTP reserve line, so it may also include non-280E UTP amounts that are not separately quantified. Percentages are printed rounded to whole numbers and sum-check against the (158)% effective rate; amounts sum exactly to $123,689. Penalties and interest ($1,593) classified as uncertain_tax_positions based on narrative tying accrued interest/penalties to UTPs. uncertain_tax_position_on_280e set true because the footnote ties the UTP increase to the 'Section 280E Position' and the UTB rollforward includes additions for refunds requested and received on prior years (UTB balance $587,826 at year end); the footnote excerpt itself does not define the Section 280E Position (a defined term elsewhere in the filing). No standalone 280E nondeductible-expense line appears; 'Non-deductible expenses' ($3,117) is not tied to 280E."
+}

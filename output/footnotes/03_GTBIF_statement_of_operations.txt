@@ -1,0 +1,21 @@
+The following table sets forth the Company’s selected consolidated financial results for the periods, and as of the dates, indicated. The (i) consolidated statements of operations for the years ended December 31, 2025, 2024 and 2023 and (ii) consolidated balance sheet as of December 31, 2025 and 2024 have been derived from, and should be read in conjunction with the consolidated financial statements and accompanying notes presented in Item 8 of this Annual Report on Form 10-K. The Company’s consolidated financial statements have been prepared in accordance with U.S. GAAP and on a going-concern basis that contemplates continuity of operations and realization of assets and liquidation of liabilities in the ordinary course of business. Amounts have been presented in thousands of U.S. dollars except for share and per share amounts.
+Years Ended December 31, | 2025 vs. 2024 | 2024 vs. 2023
+2025 | 2024 | 2023 | $% | $%
+(in thousands, except share and per share amounts) | Increase (Decrease)
+Revenues, Net of Discounts | $1,175,295 | $1,137,141 | $1,054,553 | $38,154 | 3% | $82,588 | 8%
+Cost of Goods Sold | (600,402) | (536,032) | (528,058) | 64,370 | 12% | 7,974 | 2%
+Gross Profit | 574,893 | 601,109 | 526,495 | (26,216) | (4)% | 74,614 | 14%
+Expenses:
+Selling, General, and Administrative | 437,193 | 376,684 | 341,863 | 60,509 | 16% | 34,821 | 10%
+Total Expenses | 437,193 | 376,684 | 341,863 | 60,509 | 16% | 34,821 | 10%
+Income From Operations | 137,700 | 224,425 | 184,632 | (86,725) | (39)% | 39,793 | 22%
+Total Other Income (Expense) | 125,655 | (24,286) | (28,583) | (149,941) | (617)% | (4,297) | (15)%
+Income Before Provision for Income Taxes And Non-Controlling Interest | 263,355 | 200,139 | 156,049 | 63,216 | 32% | 44,090 | 28%
+Provision for Income Taxes | 147,302 | 126,288 | 118,630 | 21,014 | 17% | 7,658 | 6%
+Net Income Before Non-Controlling Interest | 116,053 | 73,851 | 37,419 | 42,202 | 57% | 36,432 | 97%
+Net Income Attributable to Non-Controlling Interest | 1,901 | 768 | 1,152 | 1,133 | 148% | (384) | (33)%
+Net Income Attributable To Green Thumb Industries Inc. | $114,152 | $73,083 | $36,267 | $41,069 | 56% | $36,816 | 102%
+Net Income Per Share - Basic | $0.49 | $0.31 | $0.15 | $0.18 | 58% | $0.16 | 107%
+Net Income Per Share - Diluted | $0.48 | $0.30 | $0.15 | $0.18 | 60% | $0.15 | 100%
+Weighted Average Number of Shares Outstanding – Basic | 233,865,410 | 236,827,774 | 237,927,867
+Weighted Average Number of Shares Outstanding – Diluted | 236,874,553 | 241,925,957 | 239,827,390

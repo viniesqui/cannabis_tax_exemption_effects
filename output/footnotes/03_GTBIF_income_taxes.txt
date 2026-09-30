@@ -1,0 +1,95 @@
+11. INCOME TAX EXPENSE
+
+The Company accounts for income taxes in accordance with ASC 740 - Income Taxes, under which deferred tax assets and liabilities are recognized based upon anticipated future tax consequences attributable to differences between financial statement carrying values of assets and liabilities and the respective tax basis.
+
+Green Thumb Industries Inc. is organized in Canada but maintains all of its operations in the United States. Due to this inverted entity structure, the Company is subject to both US and Canadian taxation.
+
+For the years ended December 31, 2025, 2024 and 2023, income taxes expense consisted of:
+
+Years Ended December 31,
+2025 | 2024 | 2023
+(in thousands)
+Current:
+Federal | $116,811 | $109,826 | $108,399
+State | 11,771 | 22,512 | 24,674
+Foreign | — | — | —
+Total Current | 128,582 | 132,338 | 133,073
+Deferred:
+Federal | 12,221 | ( 4,604 ) | ( 10,694 )
+State | 6,499 | ( 1,446 ) | ( 3,749 )
+Foreign | — | — | —
+Total Deferred | 18,720 | ( 6,050 ) | ( 14,443 )
+Total | $147,302 | $126,288 | $118,630
+11. INCOME TAX EXPENSE (Continued)
+
+The difference between the income tax expense for the years ended December 31, 2025, 2024 and 2023 and the expected income taxes based on the statutory tax rate applied to earnings (loss) arises as follows:
+
+Years Ended December 31,
+2025 | 2024 | 2023
+(Dollars in thousands except percentages)
+U.S. Federal Statutory Tax Rate | $55,305 | 21.00 % | $42,029 | 21.00 % | $32,770 | 21.00 %
+p
+State and Local Income Taxes, Net of Federal Income Tax Effect (a) | $14,154 | 5.37 % | $20,718 | 10.35 % | $15,639 | 10.02 %
+Changes in Valuation Allowances | $( 450 ) | ( 0.17 )% | $( 103 ) | ( 0.05 )% | $32 | 0.02 %
+Nontaxable or Nondeductible Items | $10,110 | 3.84 % | $49,926 | 24.95 % | $45,925 | 29.43 %
+Changes in Unrecognized Tax Benefits | $75,030 | 28.49 % | $10,290 | 5.14 % | $23,362 | 14.97 %
+Other Adjustments - Federal | $( 8,292 ) | ( 3.15 )% | $2,941 | 1.47 % | $929 | 0.60 %
+Other Adjustments - States | $1,445 | 0.55 % | $487 | 0.24 % | $( 27 ) | ( 0.02 )%
+Effective Tax Rate | $147,302 | 55.93 % | $126,288 | 63.10 % | $118,630 | 76.02 %
+
+(a) State Taxes in Illinois, Maryland, and Pennsylvania made up the majority (greater than 50%) of the tax effect in this category.
+
+Income taxes paid for the years ended December 31, 2025, 2024 and 2023 were $30,214 thousand, $130,583 thousand and $99,535 thousand, respectively. For the year ended December 31, 2025, federal taxes paid were $13,402 thousand and state taxes paid for Illinois, Maryland and New Jersey were $12,095 thousand.
+
+As the Company operates in the cannabis industry, the IRS contends the Company is subject to IRC Section 280E under which the Company is only allowed to deduct expenses directly related to sales of product. This results in unrecognized tax benefits which can cause the effective tax rate to be highly variable and may not necessarily correlate with pre-tax income or loss.
+
+Deferred taxes are provided using an asset and liability method whereby deferred tax assets are recognized based on the rates at which they are expected to reverse in the future. Temporary differences are the differences between the reported amounts of assets and liabilities and their tax basis. The effect on deferred tax assets and liabilities of a change in tax law or tax rates is recognized in income in the period that enactment occurs.
+11. INCOME TAX EXPENSE (Continued)
+
+At December 31, 2025 and 2024, the components of deferred tax assets and liabilities were as follows:
+
+Years Ended December 31,
+2025 | 2024
+(in thousands)
+Deferred Tax Assets
+Operating Lease Liabilities | $91,670 | $62,753
+Net Operating Losses | 607 | 182
+163(j) Interest Limitation | 5,657 | 8,395
+Stock-based Compensation | 10,146 | 12,076
+Accrued Bonus | 7,720 | 6,541
+Fair Value Investments | 9,424 | 11,190
+Capitalized Inventory | 12,134 | 8,509
+Accrued Rent | 2,037 | —
+Inventory Impairment | 1,347 | —
+Other | 10,931 | 2,682
+Valuation Allowance | ( 334 ) | ( 1,126 )
+Total Deferred Tax Assets | 151,339 | 111,202
+Deferred Tax Liabilities
+Operating Right of Use Assets | $( 82,360 ) | $( 55,645 )
+Warrant Fair Value Derivative | ( 5,770 ) | ( 5,735 )
+Intangibles | ( 45,589 ) | ( 49,142 )
+RYM Note Receivable Settlement | ( 34,973 ) | —
+Total Deferred Tax Liabilities | ( 168,692 ) | ( 110,522 )
+Net Deferred Tax Liabilities | $( 17,353 ) | $680
+
+Deferred tax assets are reduced by a valuation allowance when, in the opinion of management, it is more likely than not that some portion or all of the deferred tax assets will not be realized. The Company assessed the positive and negative evidence to determine if sufficient future taxable income will be generated to use the existing deferred tax assets. A valuation allowance is maintained as of December 31, 2025 and 2024 in the amount of $334 thousand and $1,126 thousand, respectively.
+
+As of December 31, 2025, the Company had $1,300 thousand of gross federal net operating loss carryforwards. Additionally, the Company had $3,779 thousand of gross state net operating loss carryforwards, if not claimed, begin to expire in 2031. The Company’s evaluation concluded that the majority of the net operating losses will be realized.
+
+Pursuant to IRC Sections 382 and 383 of the Internal Revenue Code of 1986, as amended, utilization of net operating losses and credits may be subject to annual limitations in the event of any significant future changes in its ownership structure. These annual limitations may result in the expiration of net operating losses and credits prior to utilization.
+
+The Company operates in a number of tax jurisdictions and is subject to examination of its income tax returns by tax authorities in those jurisdictions who may challenge any item on these returns. Because the tax matters challenged by tax authorities are typically complex, the ultimate outcome of these challenges is uncertain. In accordance with ASC 740, Income Taxes, the Company recognizes the benefits of uncertain tax positions in our consolidated financial statements only after determining that it is more likely than not that the uncertain tax positions will be sustained.
+11. INCOME TAX EXPENSE (Continued)
+
+A reconciliation of the beginning and ending amount of unrecognized tax benefits is as follows:
+
+2025 | 2024 | 2023
+(in thousands)
+Balance at Beginning of Year | $76,782 | $66,492 | $43,130
+Gross increases related to tax positions in a prior period | 64,042 | 3,304 | 8,919
+Gross decreases related to tax positions in a prior period | ( 20,347 ) | ( 6,795 ) | ( 3,193 )
+Gross increases related to tax positions in the current period | 84,975 | 14,218 | 17,676
+Gross decreases related to tax positions in a current period | ( 2,104 ) | ( 437 ) | ( 40 )
+Balance at End of Year | $203,348 | $76,782 | $66,492
+
+The Company recognizes accrued interest and penalties related to unrecognized tax benefits in the provision for income taxes. As of December 31, 2025, 2024 and 2023, we recognized $5,863 thousand, $4,726 thousand and $10,043 thousand of interest and penalties, respectively. As of December 31, 2025 and 2024 we have accrued for interest and penalties of $25,207 thousand and $19,344 thousand of interest and penalties, respectively. As of December 31, 2025, $22,806 thousand of unrecognized tax benefits are expected to be recovered over the next 12 months. We file income tax returns in the US, various state jurisdictions, and Canada, which jurisdictions have varying statutes of limitations. The US federal statute of limitation and state income tax returns generally remain open for the 2022 tax year to the present. Net operating loss arising prior to these years are also open to examination if and when utilized.

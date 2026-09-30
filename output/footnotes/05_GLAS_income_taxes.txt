@@ -1,0 +1,101 @@
+PROVISION FOR INCOME TAXES AND DEFERRED INCOME TAXES
+Provision for income taxes consisted of the following (in thousands):
+
+Year Ended December 31,
+2025 | 2024
+Current:
+Federal | $10,812 | $12,392
+State | 1,122 | ( 1,894 )
+Total Current | 11,934 | 10,498
+Deferred:
+Federal | — | —
+State | — | —
+Total Deferred | — | —
+Total Provision for Income Taxes | $11,934 | $10,498
+
+The income taxes paid, net of refunds, were as follows (in thousands):
+
+Year Ended December 31,
+2025 | 2024
+U.S. Federal | $2,428 | $2,380
+U.S. State - California | 30 | 77
+Total Taxes Paid, Net of Refunds | $2,458 | $2,457
+The components of deferred tax assets and liabilities were as follows (in thousands):
+
+As of December 31,
+2025 | 2024
+Deferred Tax Assets:
+Allowance for Doubtful Accounts | $1,162 | $820
+Inventory Reserve | 249 | 309
+Accrued Expenses | 456 | 759
+Interest Expense | 2,534 | —
+Other | 1,183 | 775
+Operating Lease Liabilities | 1,189 | 2,514
+Stock-based Compensation | 1,217 | 1,806
+Operating Losses | 34,673 | 36,985
+Property and Equipment and Depreciation | 5,419 | 5,108
+Total Deferred Tax Assets | 48,082 | 49,076
+Valuation Allowance | ( 40,995 ) | ( 39,890 )
+Net Deferred Tax Assets | 7,087 | 9,186
+Deferred Tax Liabilities:
+Property, Plant and Equipment | ( 3,455 ) | ( 4,238 )
+Right-of-Use Assets | ( 1,156 ) | ( 2,437 )
+State Taxes | ( 2,476 ) | ( 2,511 )
+Total Deferred Tax Liabilities | ( 7,087 ) | ( 9,186 )
+Net Deferred Tax Assets | $— | $—
+
+As of December 31, 2025, Company had $123.0 million of Federal Net Operating Losses (“NOL”) and $99.9 million of California NOLs available to utilize in future periods. Future utilization of net operating losses is subject to a substantial annual limitation due to ownership change limitations as required by Section 382 and 383 of the Internal Revenue Code of 1986, as amended (the "Code"), as well as similar state limitations.
+
+The federal net operating loss carryforwards incurred prior to tax years beginning in 2018 will expire in fiscal year 2037, all net operating losses arising in tax years beginning in 2018 are carried forward indefinitely. All of $123.0 million NOLs were generated in years after 2017 and have indefinite life to utilize with an 80% income limitation.
+The reconciliation of income taxes computed at the U.S. federal statutory rate to the Company’s effective income tax rate is as follows (dollars in thousands):
+
+Year Ended December 31,
+2025 | 2024
+Amount | Percent | Amount | Percent
+U.S. Federal Statutory Income Tax | $( 3,574 ) | 21.0% | $2,356 | 21.0%
+State and Local Income Tax, Net of Federal Income Tax Effect | ( 1,293 ) | 7.6% | 1,083 | 9.7%
+Effect of Changes in Tax Laws or Rates Enacted in the Current Period
+Over Accrual of Prior Year Taxes | — | —% | ( 7,454 ) | ( 66.4 )%
+Return to Provision | 129 | ( 0.8 )% | ( 646 ) | ( 5.8 )%
+Changes in Valuation Allowances
+Change in Valuation Allowance - Federal | ( 62 ) | 0.4% | ( 3,489 ) | ( 31.1 )%
+Change in Valuation Allowance - California | ( 262 ) | 1.5% | ( 3,631 ) | ( 32.4 )%
+Nontaxable or Nondeductible Items
+Employee Retention Tax Credits | ( 1,305 ) | 7.7% | ( 103 ) | ( 0.9 )%
+Non-deductible executive compensation (Section 162(m)) | 891 | ( 5.2 )% | 3,500 | 31.2%
+Change in Fair Value of Contingent Consideration | — | —% | ( 2,882 ) | ( 25.7 )%
+Other Permanent Differences | 534 | ( 3.1 )% | 131 | 1.2%
+Changes in Unrecognized Tax Benefits | 10,870 | ( 63.9 )% | 15,424 | 137.5%
+Other | 6,006 | ( 35.3 )% | 6,209 | 55.3%
+Effective Income Tax Rate | $11,934 | ( 70.1 )% | $10,498 | 93.6%
+
+The Company has used a discrete effective tax rate method to calculate taxes for the years ended December 31, 2025 and 2024. The Company operates in the United States. For the periods presented, the Company had no foreign pretax income, foreign income tax expense, or foreign income taxes paid. Accordingly, all income and tax expense relate to domestic operations.
+
+When tax returns are filed, it is highly certain that some positions taken would be sustained upon examination by the taxing authorities, while others are subject to uncertainty about the merits of the position taken or the amount of the position that would be ultimately sustained. The benefit of a tax position is recognized in the financial statements in the period during which, based on all available evidence, management believes it is more likely than not the position will be sustained upon examination, including the resolution of appeals or litigation processes, if any. Tax positions taken are not offset or aggregated with other positions. Tax positions that meet the more-likely-than-not recognition threshold are measured as the largest amount of tax benefit that is more than 50 percent likely of being realized upon settlement with the applicable taxing authority. The portion of the benefits associated with tax positions taken that exceeds the amount measured as described above is reflected as a liability for unrecognized tax benefits along with any associated interest and penalties that would be payable to the taxing authorities upon examination.
+A reconciliation of the beginning and ending amount of total unrecognized tax benefits were as follows (in thousands):
+
+As of December 31,
+2025 | 2024
+Balance at Beginning of Year | $20,868 | $5,444
+IRS Section 280E Positions | 10,870 | 15,424
+Balance at End of Year | $31,738 | $20,868
+
+As the Company operates in the legalized cannabis industry, it is subject to the limits of Internal Revenue Code (“IRC”) Section 280E (“Section 280E”) for U.S. federal income tax purposes under which the Company is only allowed to deduct certain expenses directly related to the cost of goods sold. This results in permanent differences between ordinary and necessary business expenses deemed nonallowable under Section 280E, whereas the Company deducts all operating expenses on its state tax returns for which there is no comparable provision of Section 280E under the California Revenue and Taxation Code.
+
+Based on legal interpretation, it is the Company’s position that it does not owe taxes attributable to the application of Section 280E. Additionally, the Company has determined that the tax impact of its corporate overhead allocation was less likely than not to be sustained on the merits as required under ASC 740, Income Taxes, due to the evolving interpretations of Section 280E. The Company included in the balance of total unrecognized tax benefits as of December 31, 2025 and 2024 a potential benefit of $31.7 million and $20.9 million, respectively, that, if recognized, would impact the effective tax rate on income from operations related to its tax positions based on legal interpretations that challenge the Company’s tax liability under Section 280E.Unrecognized tax benefits that reduce a net operating loss, similar to tax loss or tax credit carryforwards, are presented as a reduction to deferred income taxes.
+
+The Company’s evaluation of tax positions was performed for those tax years which remain open to for audit. The Company may, from time to time, be assessed interest or penalties by the taxing authorities, although any such assessments historically have been minimal and immaterial to the Company’s financial results. In the event the Company is assessed for interest and/or penalties, such amounts will be classified as income tax expense in the financial statements.
+
+As of December 31, 2025, the Company’s federal tax returns since 2020 and state tax returns since 2019 are still subject to adjustment upon audit. The 2019 federal tax return of Natural Healing Center LLC (pre-acquisition) is currently under IRS examination. No other tax returns are currently being examined by any taxing authorities. While it is reasonably possible that certain portions of the unrecognized tax benefit may change from a lapse in applicable statute of limitations, it is not possible to reasonably estimate the effect of any amount of such a change to previously recorded uncertain tax positions in the next 12 months.
+
+One Big Beautiful Bill Act
+
+On July 4, 2025, President Trump signed into law the One Big Beautiful Bill Act (“OBBBA”) (Public Law 119-21), a comprehensive tax reform and spending reconciliation bill. The legislation includes several significant business-tax provisions, notably affecting Sections 163(j), 168(k) (Bonus Depreciation), 179, and 174 of the Internal Revenue Code. The provisions most beneficial to the Company relate to the limitation on business interest expense under Section 163(j) and Bonus Depreciation for qualified property.
+
+The OBBBA restores the more generous interest deduction limitation under Section 163(j) that had applied from 2018 through 2021. Under this amendment, the limitation is permanently based on EBITDA, rather than earnings before interest and taxes (“EBIT”). Beginning with tax years starting after December 31, 2024, taxpayers may again add back depreciation and amortization in computing adjusted taxable income for purposes of Section 163(j).
+
+Additionally, for taxable years beginning after December 31, 2025, the OBBBA clarifies that any capitalized interest, other than amounts capitalized under Sections 263(g) and 263A(f), is treated as interest subject to the Section 163(j) limitation.
+The OBBBA also revives and permanently extends 100% bonus depreciation under Section 168(k) for qualified property acquired and placed in service on or after January 20, 2025. Qualified property generally includes tangible personal property with a recovery period of 20 years or less and qualified improvement property (“QIP”). Property is treated as acquired when a written binding contract is entered into to acquire the property. Property placed in service prior to January 20, 2025 remains eligible for 40% bonus depreciation.
+
+The Company has incorporated the applicable income-tax effects of OBBBA in its income tax provision for the year ended December 31, 2025. The impact primarily reflects the reinstatement of the EBITDA-based limitation under Section 163(j), which increased the amount of deductible interest expense for the period. The Company also updated its deferred tax balances to reflect the enacted changes under OBBBA.
+Management will continue to monitor the implementation of the OBBBA and evaluate any additional impacts on the Company’s deferred tax balances and effective tax rate.

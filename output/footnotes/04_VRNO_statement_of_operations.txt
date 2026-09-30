@@ -1,0 +1,26 @@
+The accompanying notes are an integral part of these consolidated financial statements. F-3 Table of Contents
+For the Years Ended December 31,
+2025 | 2024 | 2023
+Revenues, net of Discounts | $821,504 | $878,585 | $938,452
+Cost of Goods Sold, net | 408,007 | 434,654 | 463,246
+Gross Profit | 413,497 | 443,931 | 475,206
+Operating Expenses
+Selling, General, and Administrative Expenses | 337,322 | 353,408 | 331,928
+Loss on Impairment - Investment in Associates | — | — | 6,571
+Loss on Impairment of Intangibles – Goodwill | 86,591 | 8,179 | 37,931
+Loss on Impairment of Intangibles, Fixed Assets & Held For Sale Assets | 96,677 | 319,520 | 13,686
+Total Operating Expenses | 520,590 | 681,107 | 390,116
+Loss from Investments in Associates | — | — | ( 306 )
+Income (Loss) from Operations | ( 107,093 ) | ( 237,176 ) | 84,784
+Other Income (Expense), net:
+Loss on Disposal of Property, Plant and Equipment | ( 1,950 ) | ( 1,095 ) | ( 1,123 )
+Gain on Deconsolidation | 4,739 | — | —
+Gain (Loss) on Debt Extinguishment | 1,938 | ( 3,068 ) | ( 663 )
+Interest Expense, net | ( 53,589 ) | ( 54,759 ) | ( 59,793 )
+Other Income (Expense), net | ( 10,275 ) | ( 3,817 ) | 4,593
+Total Other Income (Expense), net | ( 59,137 ) | ( 62,739 ) | ( 56,986 )
+Income (Loss) Before Provision for Income Taxes and Non-Controlling Interest | ( 166,230 ) | ( 299,915 ) | 27,798
+Provision For Income Taxes | ( 91,678 ) | ( 41,944 ) | ( 145,146 )
+Net Loss Attributable to Verano Holdings Corp. & Subsidiaries | $( 257,908 ) | $( 341,859 ) | $( 117,348 )
+Net Loss per share – basic & diluted | $( 0.71 ) | $( 0.98 ) | $( 0.34 )
+Basic & Diluted – weighted average shares outstanding | 360,911,293 | 349,584,820 | 342,774,236

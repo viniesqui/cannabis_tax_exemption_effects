@@ -1,0 +1,156 @@
+NOTE 16. INCOME TAXES
+
+The Company is treated as a United States corporation for U.S. federal income tax purposes under IRC Section 7874 and is subject to U.S. federal income tax on its worldwide income. However, for Canadian tax purposes, the Company, regardless of any application of IRC Section 7874, is treated as a Canadian resident company (as defined in the Income Tax Act (Canada) (the “ITA”) for Canadian income tax purposes. As a result, the Company is subject to taxation both in Canada and the United States.
+
+Income before provision for income taxes after the adoption of ASU 2023-09 is as follows for the year ended December 31:
+
+2025
+(in thousands)
+Domestic | $92,074
+Foreign (income subject to taxation in Canada and U.S.) | ( 601 )
+Income (loss) before provision for income taxes | $91,473
+
+Income Tax Provision
+
+The components of the income tax provision include the following for the years ended December 31:
+
+2025 | 2024 | 2023
+(in thousands)
+Current:
+Federal | $188,251 | $174,962 | $121,722
+State | 37,706 | 33,001 | 46,808
+Total current tax expense | $225,957 | $207,963 | $168,530
+Deferred:
+Federal | $( 14,202 ) | $( 18,014 ) | $( 15,755 )
+State | ( 3,646 ) | 7,640 | ( 1,417 )
+Total deferred tax expense | $( 17,848 ) | $( 10,374 ) | $( 17,172 )
+Total income tax expense | $208,109 | $197,589 | $151,358
+A reconciliation of the Federal statutory income tax rate percentage to the effective tax rate after the adoption of ASU 2023-09 is as follows for the year ended December 31:
+
+2025
+(in thousands)
+Amount | Percent
+U.S. federal statutory tax rate | $19,209 | 21.0%
+State and local income taxes, net of federal income tax effect (1) | 1,788 | 2.0%
+Nontaxable or nondeductible items
+Political contributions | 13,985 | 15.3%
+Stock compensation | 971 | 1.1%
+Excess compensation | 401 | 0.4%
+Other | ( 21 ) | —%
+Changes in unrecognized tax benefits, inclusive of interest and penalties | 172,804 | 188.9%
+Other adjustments | ( 1,028 ) | ( 1.1 )%
+Effective tax rate | $208,109 | 227.5%
+
+(1) State taxes in Florida and Maryland made up the majority (greater than 50 percent) of the tax effect in this category for the year ended December 31, 2025.
+A reconciliation of the Federal statutory income tax rate percentage to the effective tax rate prior to the adoption of ASU 2023-09 was as follows for the years ended December 31:
+
+2024 | 2023
+(in thousands)
+Income (loss) before income taxes | $42,714 | $( 284,537 )
+Federal statutory rate | 21.0% | 21.0%
+Theoretical tax provision (benefit) | $8,970 | $( 59,753 )
+Effects of tax rates in foreign jurisdictions | $( 451 ) | $15
+State taxes | ( 4,526 ) | 835
+Changes in state tax rates | 13,341 | 5,772
+Change in state tax filing methods | ( 7,509 ) | —
+Uncertain tax position, inclusive of interest and penalties | 155,362 | 130,481
+Change in valuation allowance | 6,655 | 2,962
+Other | 380 | 151
+Tax effect of non-deductible expenses:
+Goodwill impairment | — | 64,594
+Excess compensation | 7,140 | 12
+Stock compensation | ( 7,291 ) | 1,170
+Campaign and political contributions | 24,761 | 4,401
+Non-controlling interest | 757 | 718
+Total non-deductible expenses | $25,367 | $70,895
+Total income tax provision | $197,589 | $151,358
+Effective tax rates | 462.6% | ( 53.2 )%
+
+Deferred Income Taxes
+
+Deferred income taxes consist of the following as of December 31:
+
+2025 | 2024
+(in thousands)
+Deferred tax assets:
+Lease liabilities | $3,102 | $3,736
+Finance liabilities | 28,310 | 28,433
+Net operating losses | 17,489 | 16,839
+Inventory reserves | 3,517 | 5,657
+Other deferred tax assets | 5,130 | 6,247
+Total deferred tax assets: | $57,548 | $60,912
+Deferred tax liabilities:
+Right of use assets | $( 2,775 ) | $( 3,405 )
+Intangible assets | ( 195,349 ) | ( 218,970 )
+Property and equipment | ( 17,113 ) | ( 18,870 )
+Total deferred tax liabilities: | $( 215,237 ) | $( 241,245 )
+Valuation allowance | ( 20,304 ) | ( 16,212 )
+Net deferred tax liability | $( 177,993 ) | $( 196,545 )
+Realization of deferred tax assets associated with the net operating loss carryforwards is dependent upon generating sufficient taxable income prior to their expiration. A valuation allowance to reflect management's estimate of the net operating loss carryforwards that may expire prior to their utilization has been recorded as of December 31, 2025. The following table outlines the changes in the valuation allowance for the years ended December 31:
+
+2025 | 2024 | 2023
+(in thousands)
+Balance, beginning of year | $( 16,212 ) | $( 9,557 ) | $( 6,596 )
+Charged to costs and expenses | ( 173 ) | ( 6,655 ) | ( 2,961 )
+Charged to other accounts | ( 3,919 ) | — | —
+Balance, end of year | $( 20,304 ) | $( 16,212 ) | $( 9,557 )
+
+As of December 31, 2025, the Company had $11.7 million of non-capital Canadian losses which expire from 2031 to 2045, $801.1 million of state net operating losses which expire from 2038 to 2045, $57.6 million of state net operating losses which have an indefinite carryforward period, and $118.9 million of U.S. federal net operating losses which have an indefinite carryforward period. The Company determined a valuation allowance was applicable to $11.7 million of non-capital Canadian losses, $2.0 million of US federal net operating losses, and $285.7 million of state net operating losses. The Company also determined that it is more likely than not that the benefit from $116.8 million of U.S. federal net operating losses and $569.9 million of state net operating losses will not be realized and therefore this amount has not been recorded.
+
+Unrecognized Tax Benefits
+
+A reconciliation of the beginning and ending amount of unrecognized tax benefits:
+
+2025 | 2024
+(in thousands)
+Balance, January 1 | $674,668 | $542,762
+Reductions based on lapse of statute of limitations | ( 257 ) | —
+Reductions based on tax positions related to the prior years | — | ( 2,957 )
+Reductions based on refunds still outstanding | — | ( 46,696 )
+Additions based on tax positions related to the current year | 128,639 | 129,558
+Additions based on refunds received related to prior years | — | 52,001
+Additions based on tax positions related to the prior years | 5,581 | —
+Balance, December 31 | $808,631 | $674,668
+
+The Company and certain of its subsidiaries are currently under examination by the relevant taxing authorities for various tax years. Certain of these examinations include a review of the Company's tax positions based on legal interpretations that challenge the Company's tax liability under IRC 280E. With few exceptions, as of December 31, 2025, the Company is no longer subject to examination by tax authorities for years before 2020.
+
+Uncertain Tax Positions
+
+The IRS has taken the position that cannabis companies are subject to the limits of Internal Revenue Code ("IRC") Section 280E for U.S. federal income tax purposes. Under the IRS's interpretation of IRC Section 280E, cannabis companies are only allowed to deduct expenses directly and indirectly related to the production of inventory. This results in permanent differences between ordinary and necessary business expenses deemed non-allowable under IRC Section 280E.
+
+The Company has taken a position that Section 280E does not preclude it from deducting ordinary and necessary business expenditures on its tax returns. As outlined in Item 3. Legal Proceedings, the Company believes its tax position is supportable and that it has substantive legal arguments. However, management has concluded that the position does not yet meet the recognition threshold required by ASC 740. As a result, no reduction or elimination of the related uncertain tax
+position liability has been recognized as of December 31, 2025. As of December 31, 2025 and December 31, 2024, the Company recorded an uncertain tax liability in the consolidated balance sheets that reflects this tax position.
+
+A reconciliation of the beginning and ending amount of uncertain tax position liabilities:
+
+2025 | 2024
+(in thousands)
+Balance, January 1 | $445,221 | $180,350
+Reductions based on lapse of statute of limitations | ( 257 ) | —
+Additions based on tax positions related to the current year | 146,412 | 150,014
+Additions based on tax positions related to the prior years | 3,975 | 1,256
+Additions based on refunds received related to prior years | — | 52,001
+Reclass tax payment on account | 27,295 | 35,998
+Interest recorded in income tax expense, net of reversals (1) | 45,729 | 25,602
+Balance, December 31 (2) (3) | $668,375 | $445,221
+
+(1) Amounts represent the interest recorded on uncertain tax positions during the respective years which are recorded in the provision for income taxes on the consolidated statements of operations.
+(2) The Company has taken a position that IRC Section 280E does not preclude it from deducting ordinary and necessary business expenditures on its tax returns. As outlined in Item 3. Legal Proceedings , the Company believes its tax position is supportable and that it has substantive legal arguments. However, management has concluded that the position does not yet meet the recognition threshold required by ASC 740. As a result, no reduction or elimination of the related uncertain tax position liability has been recognized as of December 31, 2025. As of December 31, 2025, $ 630.3 million is related to this tax position. This amount does not include $ 93.8 million of previous tax payments for which the Company has claimed overpayment related to this tax position.
+(3) The ending balance includes accrued interest of $ 75.3 million and $ 29.6 million as of December 31, 2025 and 2024, respectively. Of the $ 75.3 million and $ 29.6 million in accrued interest as of December 31, 2025 and 2024, $ 65.8 million and $ 23.5 million relates to the Company's IRC Section 280E tax position, as of December 31, 2025 and 2024, respectively.
+
+In September 2025, the IRS issued Revenue Agent Reports proposing assessment of taxes, interest, and penalties for some of the Company's subsidiaries that were under audit. Trulieve has submitted protests to dispute those proposed liabilities before the IRS Independent Office of Appeals. As outlined in Item 3. Legal Proceedings, the Company believes its tax position is supportable and that it has substantive legal arguments. However, management has concluded that the position does not yet meet the recognition threshold required by ASC 740. As a result, no reduction or elimination of the related uncertain tax position liability has been recognized as of December 31, 2025. The proposed tax and interest amounts were previously included in the Company's uncertain tax position liabilities; however, the total penalty amount proposed, approximately $38.1 million, is not included in the Company's uncertain tax position. The Company believes the proposed penalties are without merit and will contest them vigorously.
+
+Income Taxes Paid
+
+The amounts of cash income taxes paid by the Company after the adoption of ASU 2023-09 were as follows:
+
+2025
+(in thousands)
+Federal | $( 303 )
+Columbus, Ohio | 192
+Florida | ( 141 )
+Maryland | 136
+Pennsylvania | 1,415
+Other | 161
+Total income taxes paid, net of refunds | $1,460
+The amounts of cash income taxes paid by the Company, net of refunds, during the years ended December 31, 2024 and 2023 was $(48.4) million and $52.6 million, respectively.

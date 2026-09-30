@@ -1,0 +1,134 @@
+11. INCOME TAXES
+
+The Company accounts for income taxes in accordance with ASC Topic 740 – Income Taxes, under which deferred tax assets and liabilities are recognized based upon anticipated future tax consequences attributable to differences between financial statement carrying values of assets and liabilities and the respective tax bases.
+
+For the years ended December 31, 2025, 2024 and 2023, income taxes expense consisted of:
+
+For the Years Ended December 31,
+2025 | 2024 | 2023
+Current:
+Federal | $117,832 | $130,257 | $137,375
+State | 11,302 | 20,201 | 22,029
+Foreign | — | — | —
+Total Current: | 129,134 | 150,458 | 159,404
+Deferred:
+Federal | $( 25,614 ) | $( 77,171 ) | $( 14,366 )
+State | ( 11,842 ) | ( 31,343 ) | 108
+Foreign | — | — | —
+Total Deferred | ( 37,456 ) | ( 108,514 ) | ( 14,258 )
+Total | $91,678 | $41,944 | $145,146
+
+The Company has elected to prospectively adopt the guidance in ASU No. 2023-09, Income Taxes (Topic 740): Improvements to Income Taxes Disclosures (“ASU 2023-09”). In accordance with the guidance in ASU 2023-09, the difference between the income tax expense for the year ended December 31, 2025, and the expected income taxes based on the statutory rate applied to earnings (loss) arises as follows:
+
+For the Year Ended December 31,
+2025
+Income/(Loss) before Income Taxes | $( 166,230 )
+Expense/(Recovery) based on Statutory Rate (1) | ( 34,908 ) | 21.0%
+State and Local Income Taxes | 3,723 | ( 2.2 )%
+State Prior Year True Up | ( 6,625 ) | 4.0%
+State Rate Change on Deferreds | ( 1,392 ) | 0.8%
+Changes in Valuation Allowances | ( 695 ) | 0.4%
+Nontaxable or Nondeductible Items
+Uncertain Tax Positions, including penalties and interest | 113,291 | ( 68.1 )%
+Permanent Impacts of Impairments | 15,552 | ( 9.4 )%
+Penalties and Interest | 134 | ( 0.1 )%
+Income from Investments | 451 | ( 0.3 )%
+Other Permanent Differences | 2,434 | ( 1.5 )%
+Federal Prior Year True Up | ( 287 ) | 0.2%
+Income Tax Expense | $91,678 | ( 55.2 )%
+
+(1) For the year ended December 31, 2025, state taxes in Florida make up the majority (greater than 50%) of the tax effect of this category.
+11. INCOME TAXES (Continued)
+
+The difference between the income tax expense for the years ended December 31, 2024 and December 31, 2023, and the expected income taxes based on the statutory rate applied to earnings (loss) as presented prior to prospective adoption of ASU No. 2023-09 arises as follows:
+
+For the Years Ended December 31,
+2024 | 2023
+Income/(Loss) before Income Taxes | $( 299,915 ) | $27,798
+Statutory Tax Rate | 21% | 21%
+Expense/(Recovery) based on Statutory Rate | ( 62,982 ) | 5,838
+Other Permanent Differences | 265 | 225
+Impairment | 2,677 | 9,345
+Uncertain Tax Position, including penalties and interest | 108,104 | —
+Nondeductible 280E | — | 79,731
+Penalties and Interest | 9,233 | 29,581
+Non-controlling Interests | 1,997 | 1,326
+State Taxes | ( 10,871 ) | 15,248
+Prior Year True Ups | ( 6,209 ) | 5,646
+State Rate Change on Deferred Taxes | ( 270 ) | ( 1,066 )
+Acquisition Purchase Price Remeasurement | — | ( 728 )
+Income Tax Expense | $41,944 | $145,146
+
+During the year ended December 31, 2025, the Company’s income taxes paid, net of refunds, were as follows:
+
+For the Year Ended December 31, 2025
+U.S. Federal | $75,308
+U.S. State
+Florida (1) | 6,605
+Illinois (1) | ( 4,139 )
+Pennsylvania (1) | ( 4,562 )
+Other | 4,976
+Total U.S. State | 2,880
+Total Income Taxes Paid, net of Refunds | $78,188
+
+(1)Income taxes paid, net of refunds exceeds 5% of total income taxes paid, net of refunds, in this jurisdiction.
+
+The Company paid income taxes during the years ended December 31, 2024 and 2023 of $81,535, and $166,634, respectively.
+11. INCOME TAXES (Continued)
+
+We classify penalties and interest on income taxes as a component of the provision for income taxes. During the year ended December 31, 2025, the Company recorded $134 in penalties and interest related to outstanding income tax liabilities. The Company files income tax returns in the U.S. and in various U.S. state jurisdictions which have varying statutes of limitations. The U.S. federal and state returns remain open for the 2020 tax year to the present. Subject to certain exceptions, as of December 31, 2025, the Company is no longer subject to examination by the IRS for years before 2020. The Company is currently under audit with the IRS for tax years 2021 and 2022.
+
+The IRS has taken the position that cannabis companies are subject to the limits of Section 280E of the Code for U.S. federal income tax purposes, under which, they are only allowed to deduct expenses directly related to costs of goods sold. The Company has taken a position that its deduction of ordinary and necessary business expenses is not limited by Section 280E of the Code.
+
+Deferred taxes are provided using an asset and liability method whereby deferred tax assets are recognized based on the rates at which they are expected to reverse in the future. Temporary differences are the differences between the reported amounts of assets and liabilities and their tax basis. The effect on deferred tax assets and liabilities of a change in tax law or tax rates is recognized in income in the period that enactment occurs.
+
+At December 31, 2025 and December 31, 2024, the components of deferred tax assets and (liabilities) were as follows:
+
+As of December 31,
+2025 | 2024
+Deferred Tax Assets
+Operating Lease Liabilities | $5,067 | $6,775
+Loyalty Points | 2,070 | 2,143
+Stock Compensation | 507 | 295
+Basis Differences in Goodwill | 7,079 | 4,068
+Basis Differences in Property, Plant and Equipment | 202 | 6,860
+Other Accruals | 2,798 | 4,714
+Interest and Net Operating Loss Carryforwards | 4,093 | 3,098
+Total Deferred Tax Assets | 21,816 | 27,953
+Valuation Allowances | — | ( 695 )
+Net Deferred Tax Assets | $21,816 | $27,258
+Deferred Tax Liabilities
+Operating Right of Use Assets | $( 4,560 ) | $( 6,267 )
+Intangibles | ( 53,899 ) | ( 95,090 )
+Total Deferred Tax Liabilities | ( 58,459 ) | ( 101,357 )
+Net Deferred Tax Liabilities | $( 36,643 ) | $( 74,099 )
+11. INCOME TAXES (Continued)
+
+At December 31, 2025, the Company had no federal or state net operating loss carryforwards. The Company had $4,092 business interest expense carryforwards which may be carried forward indefinitely. Deferred tax assets are reduced by a valuation allowance when, in the opinion of management, it is more likely than not that some portion or all of the deferred tax assets will not be realized. The Company assessed the positive and negative evidence to determine if sufficient future taxable income will be generated to use the existing deferred tax assets. As of December 31, 2025, the Company determined no valuation allowance was applicable to interest expense limitation.
+
+The Company operates in a number of tax jurisdictions and is subject to examination of its income tax returns by tax authorities in those jurisdictions who may challenge any item on these returns. Because the tax matters challenged by tax authorities are typically complex, the ultimate outcome of these challenges is uncertain.
+
+During the year ended December 31, 2024, the Company recorded an uncertain tax liability in uncertain tax positions on the Consolidated Balance Sheet for tax positions taken based on legal interpretations that challenge the Company's tax liability under Section 280E of the Code (“280E Position”). During the year ended December 31, 2025, the Company recorded additional uncertain tax liabilities associated with this position and reflected in the tables below.
+
+A reconciliation of the beginning and ending amount of gross unrecognized tax benefits for uncertain tax positions is as follows:
+
+2025 | 2024
+Balance at Beginning of Year | $400,994 | $2,973
+Increases related to tax positions in a prior period | 10,884 | 317,052
+Decreases related to tax positions in a prior period | ( 29,194 ) | —
+Decreases due to lapse of statute of limitations | ( 1,673 ) | ( 1,300 )
+Increases related to tax positions in the current period | 92,653 | 82,269
+Decreases related to tax positions in the current period | — | —
+Balance at End of Year | $473,664 | $400,994
+
+A reconciliation of the beginning and ending amount of uncertain tax liabilities is as follows:
+2025 | 2024
+Balance at Beginning of Year | $270,579 | $2,973
+Increases related to tax positions in a prior period | 22,759 | 159,692
+Decreases related to tax positions in a prior period | ( 39,253 ) | ( 1,300 )
+Increases related to tax positions in the current period | 86,962 | 77,260
+Interest and penalties recorded in income tax expense (1) | 37,214 | 31,954
+Decreases related to tax positions in the current period | — | —
+Balance at End of Year | $378,261 | $270,579
+
+(1)Amount represents the penalties and interest recorded on uncertain tax positions during the respective years which are recorded to the provision for income taxes on the Consolidated Statements of Operations.

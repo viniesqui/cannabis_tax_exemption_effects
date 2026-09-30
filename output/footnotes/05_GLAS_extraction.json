@@ -1,0 +1,124 @@
+{
+  "fiscal_year_end": "2025-12-31",
+  "income_statement": {
+    "unit_multiplier": 1000,
+    "net_income_label": "Net Income (Loss)",
+    "net_income": -28952.0,
+    "pretax_income": -17018.0,
+    "income_tax_expense": 11934.0,
+    "total_revenue": 181984.0
+  },
+  "rate_reconciliation": {
+    "found": true,
+    "unit_multiplier": 1000,
+    "presentation": "amounts_and_percentages",
+    "statutory_rate_percent": 21.0,
+    "pretax_income": null,
+    "total_income_tax_expense": 11934.0,
+    "line_items": [
+      {
+        "label": "U.S. Federal Statutory Income Tax",
+        "category": "statutory",
+        "amount": -3574.0,
+        "percent": 21.0,
+        "increases_tax_expense": false,
+        "rationale": "Tax computed at the 21% U.S. federal statutory rate on the pre-tax loss, a benefit."
+      },
+      {
+        "label": "State and Local Income Tax, Net of Federal Income Tax Effect",
+        "category": "state_local",
+        "amount": -1293.0,
+        "percent": 7.6,
+        "increases_tax_expense": false,
+        "rationale": "Label explicitly identifies state and local income tax net of the federal effect."
+      },
+      {
+        "label": "Over Accrual of Prior Year Taxes",
+        "category": "other",
+        "amount": 0.0,
+        "percent": 0.0,
+        "increases_tax_expense": false,
+        "rationale": "Prior-year accrual true-up, printed under the 'Effect of Changes in Tax Laws or Rates Enacted in the Current Period' heading; zero ('—') for 2025."
+      },
+      {
+        "label": "Return to Provision",
+        "category": "other",
+        "amount": 129.0,
+        "percent": -0.8,
+        "increases_tax_expense": true,
+        "rationale": "Return-to-provision true-up is neither a permanent difference nor tied to 280E."
+      },
+      {
+        "label": "Change in Valuation Allowance - Federal",
+        "category": "valuation_allowance",
+        "amount": -62.0,
+        "percent": 0.4,
+        "increases_tax_expense": false,
+        "rationale": "Printed under the 'Changes in Valuation Allowances' heading."
+      },
+      {
+        "label": "Change in Valuation Allowance - California",
+        "category": "valuation_allowance",
+        "amount": -262.0,
+        "percent": 1.5,
+        "increases_tax_expense": false,
+        "rationale": "Printed under the 'Changes in Valuation Allowances' heading."
+      },
+      {
+        "label": "Employee Retention Tax Credits",
+        "category": "nondeductible_other",
+        "amount": -1305.0,
+        "percent": 7.7,
+        "increases_tax_expense": false,
+        "rationale": "Printed under the 'Nontaxable or Nondeductible Items' heading and not tied to Section 280E."
+      },
+      {
+        "label": "Non-deductible executive compensation (Section 162(m))",
+        "category": "nondeductible_other",
+        "amount": 891.0,
+        "percent": -5.2,
+        "increases_tax_expense": true,
+        "rationale": "Nondeductible item attributed to Section 162(m), not Section 280E."
+      },
+      {
+        "label": "Change in Fair Value of Contingent Consideration",
+        "category": "nondeductible_other",
+        "amount": 0.0,
+        "percent": 0.0,
+        "increases_tax_expense": false,
+        "rationale": "Fair-value change printed under the 'Nontaxable or Nondeductible Items' heading; zero ('—') for 2025."
+      },
+      {
+        "label": "Other Permanent Differences",
+        "category": "nondeductible_other",
+        "amount": 534.0,
+        "percent": -3.1,
+        "increases_tax_expense": true,
+        "rationale": "Permanent differences not explicitly attributed to Section 280E."
+      },
+      {
+        "label": "Changes in Unrecognized Tax Benefits",
+        "category": "uncertain_tax_positions",
+        "amount": 10870.0,
+        "percent": -63.9,
+        "increases_tax_expense": true,
+        "rationale": "Label is unrecognized tax benefits; the UTB rollforward shows the identical 10,870 addition as 'IRS Section 280E Positions', so this is the 280E effect reserved as an uncertain tax position."
+      },
+      {
+        "label": "Other",
+        "category": "other",
+        "amount": 6006.0,
+        "percent": -35.3,
+        "increases_tax_expense": true,
+        "rationale": "Unexplained residual 'Other' line with no attribution in the footnote."
+      }
+    ]
+  },
+  "section_280e_quotes": [
+    "As the Company operates in the legalized cannabis industry, it is subject to the limits of Internal Revenue Code (“IRC”) Section 280E (“Section 280E”) for U.S. federal income tax purposes under which the Company is only allowed to deduct certain expenses directly related to the cost of goods sold.",
+    "Based on legal interpretation, it is the Company’s position that it does not owe taxes attributable to the application of Section 280E.",
+    "The Company included in the balance of total unrecognized tax benefits as of December 31, 2025 and 2024 a potential benefit of $31.7 million and $20.9 million, respectively, that, if recognized, would impact the effective tax rate on income from operations related to its tax positions based on legal interpretations that challenge the Company’s tax liability under Section 280E."
+  ],
+  "uncertain_tax_position_on_280e": true,
+  "extraction_notes": "All figures are in USD thousands for FY2025. Net income is the consolidated line before NCI (-28,952); the amount attributable to the Company is -29,659.\n\nThe reconciliation does not print a pre-tax income figure, so pretax_income is null there. The statement of operations shows -17,018, consistent with the 21% statutory line of -3,574.\n\nBecause pre-tax is a loss, the printed percentages carry inverted signs relative to the amounts (e.g., the UTB line is 10,870 / (63.9)%). Percentages are reported as printed and amounts are sign-normalised. The effective rate is printed as (70.1)%.\n\nThe line items sum to the 11,934 total.\n\nNo line is labelled Section 280E. The 280E effect appears in 'Changes in Unrecognized Tax Benefits' (10,870). This exactly equals the 'IRS Section 280E Positions' addition in the UTB rollforward, so it is classified as uncertain_tax_positions but is economically the 280E charge.\n\nThe company takes the position that 280E does not apply and carries a total UTB of $31.7M (FY2024: $20.9M). The 'Other' line (6,006) is unexplained and may also contain 280E-related or other effects; it cannot be determined from the filing.\n\nThe heading rows 'Effect of Changes in Tax Laws or Rates Enacted in the Current Period', 'Changes in Valuation Allowances' and 'Nontaxable or Nondeductible Items' carry no amounts and were omitted as headers. 'Over Accrual of Prior Year Taxes' and 'Return to Provision' appear under the tax-law-change heading, as printed.\n\nZero ('—') lines are included with amount 0.\n\nThe entire provision is current; deferred is nil because of a full valuation allowance of 40,995. One 2019 pre-acquisition federal return (Natural Healing Center LLC) is under IRS examination."
+}

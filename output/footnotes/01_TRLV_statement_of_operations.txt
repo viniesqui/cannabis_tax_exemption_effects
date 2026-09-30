@@ -1,0 +1,34 @@
+The accompanying notes are an integral part of these consolidated financial statements. 52 Table of Contents TRULIEVE CANNABIS CORP. CONSOLIDATED STATEMENTS OF OPERATIONS (in thousands, except for share data)
+For the Years Ended December 31,
+2025 | 2024 | 2023
+Revenue | $1,181,180 | $1,186,490 | $1,129,193
+Cost of goods sold | 470,013 | 470,745 | 540,565
+Gross profit | 711,167 | 715,745 | 588,628
+Expenses:
+Selling, general, and administrative | 445,212 | 510,451 | 386,162
+Depreciation and amortization | 117,633 | 112,806 | 109,825
+Impairment and other charges, net of (recoveries) | 4,827 | ( 5,292 ) | 6,664
+Impairment of goodwill | — | — | 307,590
+Total expenses | 567,672 | 617,965 | 810,241
+Income (loss) from operations | 143,495 | 97,780 | ( 221,613 )
+Other income (expense):
+Interest expense, net | ( 63,453 ) | ( 62,193 ) | ( 81,569 )
+Interest income | 14,520 | 14,678 | 6,164
+(Loss) gain on debt extinguishments, net | ( 1,723 ) | — | 5,937
+Other (expense) income, net | ( 1,366 ) | ( 7,551 ) | 6,544
+Total other expense, net | ( 52,022 ) | ( 55,066 ) | ( 62,924 )
+Income (loss) before provision for income taxes | 91,473 | 42,714 | ( 284,537 )
+Provision for income taxes | 208,109 | 197,589 | 151,358
+Net loss from continuing operations | ( 116,636 ) | ( 154,875 ) | ( 435,895 )
+Net loss from discontinued operations, net of tax (provision) benefit of $( 209 ), $ 0 , and $ 4,101 , respectively | ( 5,612 ) | ( 5,702 ) | ( 97,241 )
+Net loss | ( 122,248 ) | ( 160,577 ) | ( 533,136 )
+Less: net loss attributable to non-controlling interest from continuing operations | ( 5,867 ) | ( 5,472 ) | ( 5,147 )
+Less: net loss attributable to non-controlling interest from discontinued operations | — | — | ( 1,193 )
+Net loss attributable to common shareholders | $( 116,381 ) | $( 155,105 ) | $( 526,796 )
+Earnings Per Share
+Net loss per share - Continuing operations:
+Basic and diluted | $( 0.58 ) | $( 0.79 ) | $( 2.28 )
+Net loss per share - Discontinued operations:
+Basic and diluted | $( 0.03 ) | $( 0.03 ) | $( 0.51 )
+Weighted average number of common shares used in computing net loss per share:
+Basic and diluted | 191,323,791 | 189,992,663 | 188,974,176
