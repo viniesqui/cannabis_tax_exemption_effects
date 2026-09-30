@@ -18,7 +18,7 @@ pipeline goes to the primary source to get it.
 | 3. Filing retrieval | [EDGAR submissions API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces) | Most recent audited annual report: **10-K**, or **40-F** for Canadian-domiciled MSOs (Curaleaf, Cresco Labs, Glass House). Issuers with no EDGAR annual report are skipped and the next-largest holding is used |
 | 4. Footnote isolation | Inline XBRL filing | Extracts the issuer's own `us-gaap:IncomeTaxDisclosureTextBlock` tag, following `continuedAt` chains. Falls back to a scored heading search when the tag is missing. Also locates the consolidated statement of operations |
 | 5. LLM parsing | Anthropic API (`claude-opus-5-5`) | A strict JSON schema (structured outputs) makes Claude transcribe every reconciliation line with its label, amount, percentage and category. Claude never computes anything |
-| 6. Financial logic | deterministic Python | Selects the 280E line(s), applies the unit scale, computes **Pro Forma NI = Reported NI + 280E penalty** and effective tax rates |
+| 6. Financial logic | deterministic Python | Selects the 280E line(s), or the uncertain-tax-position reserve line the footnote attributes to 280E, applies the unit scale, computes **Pro Forma NI = Reported NI + 280E penalty** and effective tax rates |
 | 7. Controls and output | [XBRL company facts](https://data.sec.gov/api/xbrl/companyfacts/CIK0001754195.json) | Checks that reconciliation lines sum to total tax expense and that net income ties to the XBRL `ProfitLoss`/`NetIncomeLoss` facts. Writes JSON, CSV and a Markdown report whose executive summary is generated from the computed figures, with a source link for each filing |
 
 FY2025 is the first year public companies must follow
@@ -75,6 +75,7 @@ nothing.
 python msos_280e_diligence.py --dry-run   # all stages except the LLM; writes isolated footnotes for review
 python msos_280e_diligence.py             # full run, top 5 SEC-reporting MSOS operators
 python msos_280e_diligence.py --top-n 7 --effort xhigh
+python msos_280e_diligence.py --narrative-reserves   # also count reserves tied to 280E only in narrative
 python msos_280e_diligence.py --tickers TCNNF,GTBIF,CURLF,VRNOF,CRLBF      # bypass the holdings file
 python msos_280e_diligence.py --holdings-file ~/Downloads/MSOS.xlsx        # use a manually downloaded file
 ```
@@ -112,15 +113,31 @@ Outputs are written to `output/`:
   deductions. Rescheduling to Schedule III removes the disallowance, so this
   permanent difference disappears and tax expense falls by the same amount.
   Revenue, gross margin and operating costs are unchanged.
-- **Line selection.** Only lines the filing attributes to 280E are used. If a
-  filer shows 280E only inside a generic "nondeductible expenses" line, that
-  line is used only when the footnote discusses 280E, and the result is
-  flagged `280E_NOT_SEPARATELY_LABELLED`. Unrelated permanent differences, such
-  as share-based compensation or goodwill impairment, are never counted.
+- **Line selection.** Code picks the first of these that applies:
+  1. Lines the filing explicitly attributes to 280E.
+  2. Uncertain-tax-position reserve lines. Most large MSOs now file their
+     returns as if 280E does not apply and reserve for the disputed tax, so in
+     FY2025 the 280E cost sits in the change in that reserve, not in a
+     nondeductible line. A reserve line counts when the footnote attributes
+     that line to 280E (for example a footnote marker on it) or identifies the
+     reserve as the company's 280E position (for example a rollforward row
+     labelled 280E). Lines that hold only interest and penalties are excluded.
+     Reserves the footnote ties to 280E only in narrative count only with
+     `--narrative-reserves`. Flags: `280E_FROM_RESERVE_LINE`,
+     `RESERVE_INCLUDES_INTEREST_PENALTIES`, `RESERVE_NARRATIVE_TIE_ONLY`.
+  3. Nothing, when the company reserves for 280E without attributing an
+     amount to it. Its penalty is carried at zero and flagged
+     `280E_IN_RESERVE_NOT_QUANTIFIED`.
+  4. For companies with no 280E reserve, every nondeductible line, used as a
+     proxy only when the footnote discusses 280E and flagged
+     `280E_NOT_SEPARATELY_LABELLED`. This proxy can include unrelated permanent
+     differences, so check the flagged rows.
+- **Reserve lines are approximate.** A reserve line records the change in the
+  reserve for the year. It can include interest, penalties and positions for
+  prior years, so it can differ from the current year's 280E cost.
 - **Not modelled:** state conformity to 280E, deferred-tax remeasurement,
-  reversal of accruals where issuers already treat 280E as inapplicable on
-  their returns (the report flags these uncertain tax positions), the timing
-  of cash tax, and second-order effects on price competition.
+  release of reserves accrued in prior years, the timing of cash tax, and
+  second-order effects on price competition.
 - **Regulatory status (September 2026).** In April 2026 the Department of
   Justice moved FDA-approved marijuana products and state-licensed medical
   marijuana to Schedule III

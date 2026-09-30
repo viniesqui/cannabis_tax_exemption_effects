@@ -126,7 +126,7 @@ def submissions(name, ticker, rows):
 
 def extraction_json(net_income=-50_000, penalty=150_000, category="section_280e", quotes=True,
                     amount=True, percent=100.0, pretax=150_000, total=200_000, statutory=31_500, state=18_500):
-    line = {"label": "Nondeductible expenses - IRC Section 280E", "category": category,
+    line = {"label": "Nondeductible expenses - IRC Section 280E", "category": category, "reserve_280e_link": "none",
             "amount": penalty if amount else None, "percent": percent,
             "increases_tax_expense": True, "rationale": "Label cites IRC Section 280E."}
     return {
@@ -139,11 +139,11 @@ def extraction_json(net_income=-50_000, penalty=150_000, category="section_280e"
             "statutory_rate_percent": 21.0, "pretax_income": pretax, "total_income_tax_expense": total,
             "line_items": [
                 {"label": "Expected income tax expense at federal statutory rate", "category": "statutory",
-                 "amount": statutory if amount else None, "percent": 21.0, "increases_tax_expense": True,
+                 "reserve_280e_link": "none", "amount": statutory if amount else None, "percent": 21.0, "increases_tax_expense": True,
                  "rationale": "Starting line."},
                 line,
                 {"label": "State taxes, net of federal benefit", "category": "state_local",
-                 "amount": state if amount else None, "percent": 12.3, "increases_tax_expense": True,
+                 "reserve_280e_link": "none", "amount": state if amount else None, "percent": 12.3, "increases_tax_expense": True,
                  "rationale": "State."},
             ],
         },
@@ -299,6 +299,80 @@ def test_nondeductible_proxy_only_when_280e_discussed():
     assert sel2.amount_usd is None and sel2.method == "not_disclosed"
 
 
+def reserve_extraction(link="reserve_attributed", reserve=150_000, utp_on_280e=True, extra=()):
+    """FY2025-style reconciliation: 280E sits in the uncertain-tax-position reserve line,
+    beside unrelated nondeductible items that must not be counted."""
+    d = extraction_json(category="nondeductible_other", penalty=5_000)
+    d["rate_reconciliation"]["line_items"][1]["label"] = "Political contributions"
+    d["rate_reconciliation"]["line_items"].append(
+        {"label": "Changes in unrecognized tax benefits, inclusive of interest and penalties",
+         "category": "uncertain_tax_positions", "reserve_280e_link": link, "amount": reserve, "percent": 90.0,
+         "increases_tax_expense": reserve > 0, "rationale": "$630.3 million of the UTP liability relates to 280E."})
+    d["rate_reconciliation"]["line_items"].extend(extra)
+    d["uncertain_tax_position_on_280e"] = utp_on_280e
+    return m.TaxExtraction.model_validate(d)
+
+
+INTEREST_ONLY_LINE = {"label": "Penalties and interest", "category": "uncertain_tax_positions",
+                      "reserve_280e_link": "reserve_attributed", "amount": 2_000, "percent": 1.0,
+                      "increases_tax_expense": True, "rationale": "Interest on the 280E reserve."}
+
+
+def test_reserve_line_attributed_to_280e_is_used_instead_of_nondeductible_items():
+    sel = m.select_280e_penalty(reserve_extraction(extra=[INTEREST_ONLY_LINE]))
+    assert sel.method == "reserve_280e"
+    assert sel.amount_usd == 150_000_000  # political contributions and the interest-only line excluded
+    assert sel.lines == ["Changes in unrecognized tax benefits, inclusive of interest and penalties"]
+    assert "280E_FROM_RESERVE_LINE" in sel.flags and "RESERVE_INCLUDES_INTEREST_PENALTIES" in sel.flags
+    assert sel.evidence == ["$630.3 million of the UTP liability relates to 280E."]
+
+
+def test_reserve_line_attributed_by_its_own_footnote_marker_is_used():
+    sel = m.select_280e_penalty(reserve_extraction(link="line_attributed"))
+    assert sel.method == "reserve_280e" and sel.amount_usd == 150_000_000
+
+
+def test_narrative_only_reserve_is_not_quantified_unless_opted_in():
+    x = reserve_extraction(link="narrative_only")
+    sel = m.select_280e_penalty(x)
+    assert sel.amount_usd is None and sel.method == "reserve_not_attributed"
+    assert sel.flags == ["280E_IN_RESERVE_NOT_QUANTIFIED"]  # never falls back to the nondeductible proxy
+    opted = m.select_280e_penalty(x, narrative_reserves=True)
+    assert opted.amount_usd == 150_000_000 and "RESERVE_NARRATIVE_TIE_ONLY" in opted.flags
+
+
+def test_company_reserving_for_280e_skips_the_nondeductible_proxy():
+    sel = m.select_280e_penalty(reserve_extraction(link="none", utp_on_280e=True))
+    assert sel.method == "reserve_not_attributed" and sel.amount_usd is None
+    sel2 = m.select_280e_penalty(reserve_extraction(link="none", utp_on_280e=False))
+    assert sel2.method == "nondeductible_proxy" and sel2.amount_usd == 5_000_000
+
+
+def test_explicit_280e_line_takes_precedence_over_reserve():
+    d = extraction_json()
+    d["rate_reconciliation"]["line_items"].append(
+        {"label": "Increase in uncertain tax positions", "category": "uncertain_tax_positions",
+         "reserve_280e_link": "line_attributed", "amount": 40_000, "percent": 20.0,
+         "increases_tax_expense": True, "rationale": "Refund claims on the 280E position."})
+    sel = m.select_280e_penalty(m.TaxExtraction.model_validate(d))
+    assert sel.method == "explicit_280e" and sel.amount_usd == 150_000_000
+
+
+def test_net_release_of_280e_reserve_is_not_a_penalty():
+    sel = m.select_280e_penalty(reserve_extraction(reserve=-20_000))
+    assert sel.amount_usd is None and "RESERVE_NET_RELEASE" in sel.flags
+
+
+def test_apply_extraction_passes_narrative_reserve_option():
+    x = reserve_extraction(link="narrative_only")
+    res = m.CompanyResult(rank=1, issuer="GTI", msos_weight_pct=10)
+    m.apply_extraction(res, x)
+    assert res.penalty_280e is None and res.pro_forma_net_income == res.reported_net_income
+    res2 = m.CompanyResult(rank=1, issuer="GTI", msos_weight_pct=10)
+    m.apply_extraction(res2, x, narrative_reserves=True)
+    assert res2.penalty_280e == 150_000_000 and res2.penalty_evidence
+
+
 def test_percent_only_reconciliation_for_loss_company():
     x = m.TaxExtraction.model_validate(extraction_json(amount=False, percent=-120.0, pretax=-100_000))
     sel = m.select_280e_penalty(x)
@@ -366,6 +440,18 @@ def test_executive_summary_loss_to_profit():
     assert "(Alpha (AAA) and Beta (BBB); together 20.0% of MSOS net assets" in text
     assert "Across the two largest" in text
     assert f"({m.MSOS_HOLDINGS_URL})" in text and "(https://www.sec.gov/AAA.htm)" in text
+
+
+def test_executive_summary_explains_reserve_and_unquantified_companies():
+    reserve = _ok_result("Alpha", "AAA", -300e6, 100e6)
+    reserve.penalty_method = "reserve_280e"
+    gti = _ok_result("Beta", "BBB", 50e6, 0.0)
+    gti.penalty_280e, gti.penalty_method = None, "reserve_not_attributed"
+    text = m.build_executive_summary([reserve, gti], m.MSOS_HOLDINGS_URL, None)
+    assert "aggregate Section 280E penalty of $100.0M" in text
+    assert ("for Alpha, which files as if 280E does not apply, the figure is the change in the "
+            "uncertain-tax-position reserve its footnote attributes to 280E") in text
+    assert "Beta reserves for 280E without attributing an amount to it and is carried at zero" in text
 
 
 def test_executive_summary_narrowing_loss_and_ticker_override():

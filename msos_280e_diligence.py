@@ -105,7 +105,7 @@ ANNUAL_FORMS = ("10-K", "40-F", "20-F")
 
 DEFAULT_MODEL = "claude-opus-5-5"
 DEFAULT_EFFORT = "high"
-PROMPT_VERSION = "2026-09-30.1"  # bump to invalidate cached LLM extractions
+PROMPT_VERSION = "2026-09-30.3"  # bump to invalidate cached LLM extractions
 
 # Browser-style UA for the fund sponsor's public website (SEC gets its own UA).
 WEB_USER_AGENT = (
@@ -887,6 +887,7 @@ LineCategory = Literal[
     "statutory", "section_280e", "nondeductible_other", "state_local",
     "valuation_allowance", "uncertain_tax_positions", "other",
 ]
+ReserveLink = Literal["line_attributed", "reserve_attributed", "narrative_only", "none"]
 Multiplier = Literal[1, 1000, 1000000]
 
 
@@ -897,6 +898,7 @@ class _Strict(BaseModel):
 class ReconciliationLine(_Strict):
     label: str
     category: LineCategory
+    reserve_280e_link: ReserveLink
     amount: Optional[float]
     percent: Optional[float]
     increases_tax_expense: bool
@@ -969,10 +971,13 @@ EXTRACTION_SCHEMA: dict[str, Any] = _obj({
             "items": _obj({
                 "label": {"type": "string", "description": "Verbatim line label."},
                 "category": {"type": "string", "enum": list(LineCategory.__args__)},  # type: ignore[attr-defined]
+                "reserve_280e_link": {"type": "string", "enum": list(ReserveLink.__args__),  # type: ignore[attr-defined]
+                                      "description": "For uncertain_tax_positions lines: how the footnote ties the "
+                                                     "reserve to Section 280E. 'none' for every other line."},
                 "amount": _num("Currency amount as printed, sign-normalised: positive increases income tax expense, negative decreases it. Null if not presented."),
                 "percent": _num("Rate effect as printed, e.g. -45.3 for '(45.3)%'. Null if not presented."),
                 "increases_tax_expense": {"type": "boolean"},
-                "rationale": {"type": "string", "description": "One sentence justifying the category; quote the text tying it to 280E where applicable."},
+                "rationale": {"type": "string", "description": "One sentence justifying the category and reserve_280e_link; quote the text tying the line or reserve to 280E where applicable."},
             }),
         },
     }, "The statutory-to-effective tax rate reconciliation from the income taxes footnote."),
@@ -1018,11 +1023,30 @@ reduces a benefit). Null if the table shows percentages only.
        "section_280e" - the label, a parenthetical, a footnote marker on the line, or \
 the narrative explicitly attributes this specific line to IRC Section 280E \
 (e.g. "Section 280E", "Nondeductible expenses - 280E", "Non-deductible expenses \
-(primarily IRC 280E)").
+(primarily IRC 280E)"). Not for uncertain-tax-position reserve lines; see \
+reserve_280e_link.
        "nondeductible_other" - nondeductible or permanent items not explicitly tied \
 to 280E (share-based compensation, goodwill impairment, fair-value changes, ...).
        "statutory", "state_local", "valuation_allowance", "uncertain_tax_positions", \
 "other" - as named.
+   - reserve_280e_link: many operators file returns as if 280E does not apply and \
+record the disputed tax as an uncertain-tax-position (UTP / unrecognized tax \
+benefit) reserve, so the 280E cost appears in the reconciliation as a change in \
+that reserve. Classify a reserve line as "uncertain_tax_positions" even when it \
+is attributed to 280E, and record the tie here:
+       "line_attributed" - a label, parenthetical or footnote marker on this line, \
+or the narrative, attributes this line itself wholly or primarily to Section 280E \
+(e.g. a marker reading "Primarily related to the Company's Section 280E Position").
+       "reserve_attributed" - the footnote identifies the reserve this line changes, \
+its rollforward, or a stated dollar portion of it as the company's 280E position \
+(e.g. "recorded an uncertain tax liability for positions that challenge its \
+liability under Section 280E ... reflected in the tables below", "$X of the \
+liability relates to the 280E position", a rollforward row labelled 280E).
+       "narrative_only" - the footnote says only in general terms that 280E gives \
+rise to unrecognized tax benefits, without identifying the reserve, its \
+rollforward or any amount as the 280E position.
+       "none" - the footnote does not tie the reserve to 280E.
+     Use "none" for every line that is not an uncertain_tax_positions line.
    - If there is no reconciliation table, set found=false, \
 presentation="not_presented" and leave line_items empty.
 
@@ -1171,6 +1195,12 @@ class PenaltySelection:
     method: str
     lines: list[str]
     flags: list[str]
+    evidence: list[str] = field(default_factory=list)
+
+
+# Reserve lines that only carry interest and penalties are not the 280E tax itself.
+_INTEREST_PENALTY_RE = re.compile(r"interest|penalt", re.I)
+_RESERVE_LABEL_RE = re.compile(r"uncertain|unrecogni[sz]ed|reserve|\bUT[BP]s?\b", re.I)
 
 
 def _line_usd(line: ReconciliationLine, multiplier: int, pretax_usd: float | None) -> tuple[float | None, str | None]:
@@ -1182,14 +1212,21 @@ def _line_usd(line: ReconciliationLine, multiplier: int, pretax_usd: float | Non
     return None, None
 
 
-def select_280e_penalty(x: TaxExtraction) -> PenaltySelection:
+def select_280e_penalty(x: TaxExtraction, *, narrative_reserves: bool = False) -> PenaltySelection:
     """Deterministic selection of the 280E penalty from the extracted reconciliation.
 
     Preference order:
       1. lines the filing explicitly attributes to Section 280E;
-      2. otherwise, generic nondeductible-expense lines, but only when the footnote
+      2. otherwise, uncertain-tax-position reserve lines, for operators that file as
+         if 280E does not apply and reserve for the disputed tax, when the footnote
+         attributes the line, or the reserve it changes, to 280E (or, with
+         `narrative_reserves`, merely says 280E gives rise to it). Lines that carry
+         only interest and penalties are excluded;
+      3. otherwise, if the company reserves for 280E, nothing: the 280E cost sits in
+         a reserve the filing does not quantify, so nondeductible lines would miss it;
+      4. otherwise, generic nondeductible-expense lines, but only when the footnote
          narrative discusses 280E (flagged as a proxy - may include non-280E items);
-      3. otherwise, nothing: the penalty is reported as not disclosed.
+      5. otherwise, nothing: the penalty is reported as not disclosed.
     """
     rr, inc = x.rate_reconciliation, x.income_statement
     flags: list[str] = []
@@ -1202,9 +1239,23 @@ def select_280e_penalty(x: TaxExtraction) -> PenaltySelection:
     elif inc.pretax_income is not None:
         pretax_usd = inc.pretax_income * inc.unit_multiplier
 
+    reserves = [ln for ln in rr.line_items if ln.category == "uncertain_tax_positions"
+                and not (_INTEREST_PENALTY_RE.search(ln.label) and not _RESERVE_LABEL_RE.search(ln.label))]
+    accepted = {"line_attributed", "reserve_attributed"} | ({"narrative_only"} if narrative_reserves else set())
     explicit = [ln for ln in rr.line_items if ln.category == "section_280e"]
+    tied = [ln for ln in reserves if ln.reserve_280e_link in accepted]
     if explicit:
         chosen, method = explicit, "explicit_280e"
+    elif tied:
+        chosen, method = tied, "reserve_280e"
+        flags.append("280E_FROM_RESERVE_LINE")
+        if any(ln.reserve_280e_link == "narrative_only" for ln in tied):
+            flags.append("RESERVE_NARRATIVE_TIE_ONLY")
+        if any(_INTEREST_PENALTY_RE.search(ln.label) for ln in tied):
+            flags.append("RESERVE_INCLUDES_INTEREST_PENALTIES")
+    elif any(ln.reserve_280e_link != "none" for ln in reserves) or (reserves and x.uncertain_tax_position_on_280e):
+        return PenaltySelection(None, "reserve_not_attributed", [], ["280E_IN_RESERVE_NOT_QUANTIFIED"],
+                                [ln.rationale for ln in reserves])
     else:
         proxy = [ln for ln in rr.line_items if ln.category == "nondeductible_other"]
         if proxy and x.section_280e_quotes:
@@ -1213,7 +1264,7 @@ def select_280e_penalty(x: TaxExtraction) -> PenaltySelection:
         else:
             return PenaltySelection(None, "not_disclosed", [], ["NO_280E_LINE"])
 
-    total, labels = 0.0, []
+    total, labels, evidence = 0.0, [], []
     for ln in chosen:
         usd, flag = _line_usd(ln, rr.unit_multiplier, pretax_usd)
         if usd is None:
@@ -1223,12 +1274,15 @@ def select_280e_penalty(x: TaxExtraction) -> PenaltySelection:
             flags.append(flag)
         total += usd
         labels.append(ln.label)
+        evidence.append(ln.rationale)
     if not labels:
         return PenaltySelection(None, method, [], flags + ["NO_QUANTIFIABLE_280E_LINE"])
+    if total < 0 and method == "reserve_280e":  # a net release of the reserve is not a 280E charge
+        return PenaltySelection(None, method, labels, flags + ["RESERVE_NET_RELEASE"], evidence)
     if total < 0:  # 280E disallows deductions; it can only increase tax expense
         flags.append("SIGN_NORMALISED")
         total = abs(total)
-    return PenaltySelection(total, method, labels, flags)
+    return PenaltySelection(total, method, labels, flags, evidence)
 
 
 def reconciliation_ties(x: TaxExtraction) -> bool | None:
@@ -1275,6 +1329,7 @@ class CompanyResult:
     penalty_280e: float | None = None
     penalty_method: str = ""
     penalty_lines: list[str] = field(default_factory=list)
+    penalty_evidence: list[str] = field(default_factory=list)
     pro_forma_net_income: float | None = None
     pretax_income: float | None = None
     income_tax_expense: float | None = None
@@ -1291,7 +1346,7 @@ class CompanyResult:
     error: str = ""
 
 
-def apply_extraction(res: CompanyResult, x: TaxExtraction) -> None:
+def apply_extraction(res: CompanyResult, x: TaxExtraction, *, narrative_reserves: bool = False) -> None:
     inc, rr = x.income_statement, x.rate_reconciliation
     m = inc.unit_multiplier
     res.fiscal_year_end = x.fiscal_year_end or res.fiscal_year_end
@@ -1303,8 +1358,9 @@ def apply_extraction(res: CompanyResult, x: TaxExtraction) -> None:
     if res.income_tax_expense is None and rr.total_income_tax_expense is not None:
         res.income_tax_expense = rr.total_income_tax_expense * rr.unit_multiplier
 
-    sel = select_280e_penalty(x)
+    sel = select_280e_penalty(x, narrative_reserves=narrative_reserves)
     res.penalty_280e, res.penalty_method, res.penalty_lines = sel.amount_usd, sel.method, sel.lines
+    res.penalty_evidence = sel.evidence
     res.flags.extend(sel.flags)
     res.reconciliation_ties = reconciliation_ties(x)
     if res.reconciliation_ties is False:
@@ -1410,9 +1466,26 @@ def build_executive_summary(results: list[CompanyResult], holdings_source: str, 
         breadth = f"with the number of profitable operators rising from {before} to {after} of {n}"
     else:
         breadth = f"with {after} of {n} operators profitable pro forma, unchanged from reported"
+    notes = []
+    reserve = [r for r in ok if r.penalty_method == "reserve_280e" and r.penalty_280e]
+    if reserve:
+        one = len(reserve) == 1
+        notes.append(f"for {_join([r.company or r.issuer for r in reserve])}, which {'files' if one else 'file'} "
+                     "as if 280E does not apply, the figure is the change in the uncertain-tax-position reserve "
+                     f"{'its footnote attributes' if one else 'their footnotes attribute'} to 280E, which can "
+                     "include interest, penalties and prior-year positions")
+    unquantified = [r for r in ok if r.penalty_method == "reserve_not_attributed"]
+    if unquantified:
+        one = len(unquantified) == 1
+        notes.append(f"{_join([r.company or r.issuer for r in unquantified])} "
+                     f"{'reserves' if one else 'reserve'} for 280E without attributing an amount to it and "
+                     f"{'is' if one else 'are'} carried at zero")
     proxy = [r for r in ok if r.penalty_method == "nondeductible_proxy"]
-    proxy_clause = (f" ({len(proxy)} of which disclose 280E only within a broader nondeductible-expense line, "
-                    f"flagged in the appendix)") if proxy else ""
+    if proxy:
+        notes.append(f"{_join([r.company or r.issuer for r in proxy])} "
+                     f"{'discloses' if len(proxy) == 1 else 'disclose'} 280E only within a broader "
+                     "nondeductible-expense line, flagged in the appendix")
+    notes_clause = f" ({'; '.join(notes)})" if notes else ""
 
     paragraph = (
         "Because standard financial-data APIs report only total income tax expense and never isolate the "
@@ -1426,11 +1499,11 @@ def build_executive_summary(results: list[CompanyResult], holdings_source: str, 
         f"Across the {n_word} largest SEC-reporting operators in the fund ({names}"
         + (f"; together {weight:.1f}% of MSOS net assets, swap and direct exposure combined" if weight > 0 else "")
         + f"), the {fy}footnotes disclose an aggregate Section 280E penalty of "
-        f"{fmt_usd(pen)}{rev_clause}{proxy_clause}. "
+        f"{fmt_usd(pen)}{rev_clause}{notes_clause}. "
         "Section 280E denies every deduction other than cost of goods sold to a business trafficking in a "
         "Schedule I or II substance, so these operators are taxed on gross profit rather than operating income; "
         "rescheduling to Schedule III ends that disallowance and restores the deductibility of SG&A. Because the "
-        "reconciliation line is precisely the tax effect of those disallowed deductions, eliminating it reduces "
+        "280E charge in the reconciliation is the tax on those disallowed deductions, eliminating it reduces "
         "income tax expense dollar for dollar with no change to revenue, gross margin or operating costs, so the "
         f"penalty drops straight to the bottom line: {outcome}, a {fmt_usd(pen)} improvement in "
         f"aggregate profitability, {breadth}."
@@ -1487,6 +1560,8 @@ def render_markdown(results: list[CompanyResult], issuers: list[Issuer], summary
                    + (" Company carries an uncertain tax position on 280E." if r.uncertain_tax_position_on_280e else ""))
         for q in r.section_280e_quotes[:2]:
             out.append(f"  - > {q}")
+        for ev in r.penalty_evidence:
+            out.append(f"  - Line evidence: {ev}")
         if r.extraction_notes:
             out.append(f"  - Extraction notes: {r.extraction_notes}")
 
@@ -1499,13 +1574,22 @@ def render_markdown(results: list[CompanyResult], issuers: list[Issuer], summary
 
     out += [
         "", "## Methodology and limitations", "",
-        "- **Pro forma definition.** Pro Forma Net Income = Reported Net Income + the tax effect the rate "
-        "reconciliation attributes to Section 280E. It removes the permanent difference only; it does not "
-        "model state conformity, deferred-tax remeasurement, reversal of uncertain-tax-position accruals, "
-        "or second-order effects on pricing and competition.",
-        "- **Line selection is deterministic.** The LLM only transcribes and classifies reconciliation lines; "
-        "code selects explicit 280E lines, falls back to generic nondeductible lines only when the footnote "
-        "discusses 280E (flag `280E_NOT_SEPARATELY_LABELLED`), and never uses unrelated permanent differences.",
+        "- **Pro forma definition.** Pro Forma Net Income = Reported Net Income + the tax charge the rate "
+        "reconciliation attributes to Section 280E: an explicit 280E line where one exists, otherwise the "
+        "change in the uncertain-tax-position reserve the footnote attributes to 280E (operators that file as "
+        "if 280E does not apply book the disputed tax there). It removes that charge only; it does not model "
+        "state conformity, deferred-tax remeasurement, release of reserves accrued in prior years, or "
+        "second-order effects on pricing and competition. A reserve line can include interest, penalties and "
+        "positions for prior years, so it can differ from the current year's 280E cost (flags "
+        "`280E_FROM_RESERVE_LINE`, `RESERVE_INCLUDES_INTEREST_PENALTIES`).",
+        "- **Line selection is deterministic.** The LLM only transcribes and classifies reconciliation lines and "
+        "states how the footnote ties each reserve to 280E; code selects, in order: explicit 280E lines; reserve "
+        "lines the footnote attributes to 280E, directly or as the company's 280E position (lines holding only interest "
+        "and penalties are excluded; reserves tied to 280E only in narrative count only with "
+        "`--narrative-reserves`, flag `RESERVE_NARRATIVE_TIE_ONLY`); nothing, when the company reserves for "
+        "280E without attributing an amount to it (flag `280E_IN_RESERVE_NOT_QUANTIFIED`, penalty carried at "
+        "zero); and, for companies with no 280E reserve, all nondeductible lines as a proxy when the footnote "
+        "discusses 280E (flag `280E_NOT_SEPARATELY_LABELLED`), which can include unrelated permanent differences.",
         "- **Controls.** Reconciliation lines must sum to total tax expense; net income is cross-checked "
         "against the issuer's XBRL `ProfitLoss`/`NetIncomeLoss` facts for the same accession.",
         "- **Filer universe.** Curaleaf, Cresco Labs and Glass House file Form 40-F (U.S. GAAP financial "
@@ -1641,7 +1725,7 @@ def run(args: argparse.Namespace) -> int:
                 continue
             extraction = extractor.extract(filing, filing.company, sections)
             (footnote_dir / f"{stem}_extraction.json").write_text(extraction.model_dump_json(indent=2))
-            apply_extraction(res, extraction)
+            apply_extraction(res, extraction, narrative_reserves=args.narrative_reserves)
             try:
                 period = filing.report_date or res.fiscal_year_end
                 apply_xbrl_check(res, xbrl_net_income(sec, filing, period))
@@ -1677,6 +1761,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--cache-dir", default=".cache")
     p.add_argument("--refresh", action="store_true", help="ignore cached holdings/submissions data")
     p.add_argument("--dry-run", action="store_true", help="run every stage except the LLM call")
+    p.add_argument("--narrative-reserves", action="store_true",
+                   help="also count uncertain-tax-position reserve lines the footnote ties to 280E only in "
+                        "narrative, without attributing an amount to 280E")
     p.add_argument("-v", "--verbose", action="store_true")
     return p.parse_args(argv)
 
