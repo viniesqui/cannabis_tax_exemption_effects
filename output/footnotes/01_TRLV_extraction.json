@@ -19,66 +19,74 @@
       {
         "label": "U.S. federal statutory tax rate",
         "category": "statutory",
+        "reserve_280e_link": "none",
         "amount": 19209.0,
         "percent": 21.0,
         "increases_tax_expense": true,
-        "rationale": "Tax computed at the 21.0% U.S. federal statutory rate, the starting point of the reconciliation."
+        "rationale": "Tax at the 21.0% federal statutory rate on pre-tax income."
       },
       {
         "label": "State and local income taxes, net of federal income tax effect (1)",
         "category": "state_local",
+        "reserve_280e_link": "none",
         "amount": 1788.0,
         "percent": 2.0,
         "increases_tax_expense": true,
-        "rationale": "State and local income taxes net of federal effect; footnote (1) notes Florida and Maryland make up the majority."
+        "rationale": "State and local tax line; footnote (1) says Florida and Maryland made up the majority of the effect, with no reference to 280E."
       },
       {
         "label": "Political contributions",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 13985.0,
         "percent": 15.3,
         "increases_tax_expense": true,
-        "rationale": "Sub-line of 'Nontaxable or nondeductible items' for nondeductible political contributions, not tied to 280E."
+        "rationale": "Sub-line under 'Nontaxable or nondeductible items' for political contributions, not tied to Section 280E."
       },
       {
         "label": "Stock compensation",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 971.0,
         "percent": 1.1,
         "increases_tax_expense": true,
-        "rationale": "Sub-line of 'Nontaxable or nondeductible items' for stock compensation, not tied to 280E."
+        "rationale": "Nondeductible stock compensation sub-line, not tied to Section 280E."
       },
       {
         "label": "Excess compensation",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 401.0,
         "percent": 0.4,
         "increases_tax_expense": true,
-        "rationale": "Sub-line of 'Nontaxable or nondeductible items' for excess compensation (IRC 162(m)-type), not tied to 280E."
+        "rationale": "Nondeductible excess compensation sub-line, not tied to Section 280E."
       },
       {
         "label": "Other",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": -21.0,
         "percent": 0.0,
         "increases_tax_expense": false,
-        "rationale": "Residual sub-line within 'Nontaxable or nondeductible items', not tied to 280E; percent printed as '—%'."
+        "rationale": "Residual 'Other' sub-line within 'Nontaxable or nondeductible items', with no 280E attribution; printed as '—%'."
       },
       {
         "label": "Changes in unrecognized tax benefits, inclusive of interest and penalties",
         "category": "uncertain_tax_positions",
+        "reserve_280e_link": "reserve_attributed",
         "amount": 172804.0,
         "percent": 188.9,
         "increases_tax_expense": true,
-        "rationale": "Label explicitly refers to changes in unrecognized tax benefits; although the narrative ties most of the UTP liability to the 280E position, the line itself is not labeled or footnoted as 280E."
+        "rationale": "This is a change in the UTP reserve. Footnote (2) to the UTP liability rollforward states that the Company 'has taken a position that IRC Section 280E does not preclude it from deducting ordinary and necessary business expenditures' and that 'As of December 31, 2025, $ 630.3 million is related to this tax position'. That ties a stated dollar portion of the reserve to 280E, but no marker on the reconciliation line itself does."
       },
       {
         "label": "Other adjustments",
         "category": "other",
+        "reserve_280e_link": "none",
         "amount": -1028.0,
         "percent": -1.1,
         "increases_tax_expense": false,
-        "rationale": "Generic other adjustments with no further attribution."
+        "rationale": "Generic other adjustments line with no 280E attribution."
       }
     ]
   },
@@ -88,5 +96,5 @@
     "Of the $ 75.3 million and $ 29.6 million in accrued interest as of December 31, 2025 and 2024, $ 65.8 million and $ 23.5 million relates to the Company's IRC Section 280E tax position, as of December 31, 2025 and 2024, respectively."
   ],
   "uncertain_tax_position_on_280e": true,
-  "extraction_notes": "All figures in thousands. Net income is the consolidated 'Net loss' of (122,248), which includes discontinued operations loss of (5,612); net loss from continuing operations is (116,636) and net loss attributable to common shareholders is (116,381). The 2025 reconciliation is presented under ASU 2023-09 in amounts and percentages and begins with tax at the statutory rate (19,209); it does not print pre-tax income, so rate_reconciliation.pretax_income is null (the separate domestic/foreign pre-tax table and the income statement show 91,473). 'Nontaxable or nondeductible items' is a header with sub-lines (Political contributions, Stock compensation, Excess compensation, Other); sub-lines are reported and no subtotal is printed. No reconciling line is explicitly labeled as Section 280E. The 280E effect is embedded in 'Changes in unrecognized tax benefits, inclusive of interest and penalties' (172,804; 188.9%) because the company files returns deducting ordinary and necessary expenses as if 280E does not apply and records a UTP liability. The narrative states that $630.3 million of the $668,375 thousand UTP liability relates to the 280E position, excluding $93.8 million of prior payments claimed as overpayments. Accrued interest of $65.8 million relates to 280E. The line amount is not split between 280E and non-280E components, so the 280E portion of the line cannot be isolated. A proposed IRS penalty of approximately $38.1 million is not included in the UTP liability. The line items sum to the printed total of 208,109; the effective rate is 227.5%. Comparative 2024 and 2023 reconciliations use the pre-ASU 2023-09 format and were ignored."
+  "extraction_notes": "All figures are in thousands. Net income is the consolidated 'Net loss' of (122,248), before non-controlling interest allocation. It includes a net loss from discontinued operations of (5,612); the net loss from continuing operations was (116,636). Pre-tax income (91,473) and tax expense (208,109) relate to continuing operations. The 2025 reconciliation follows ASU 2023-09 and shows amounts and percentages. It does not print a pre-tax income row, so the reconciliation pretax_income is null. The 91,473 figure appears in the income statement and in the separate domestic/foreign pre-tax table. The sub-lines sum exactly to the 208,109 total. There is no explicit Section 280E line in the reconciliation. The company files as if 280E does not apply, so the 280E cost appears within 'Changes in unrecognized tax benefits, inclusive of interest and penalties' (172,804; 188.9%). That line is not itself footnoted as 280E; the tie is at the reserve level: $630.3 million of the $668,375 thousand UTP liability relates to the 280E position, plus $65.8 million of accrued interest. The footnote presents two different rollforwards: unrecognized tax benefits ending at 808,631 and uncertain tax position liabilities ending at 668,375. Neither reconciles directly to the 172,804 reconciliation line. There is no separate valuation allowance line in the 2025 reconciliation, although the allowance rollforward shows 173 charged to costs and expenses; any such effect is presumably within other lines. Proposed IRS penalties of about $38.1 million are not included in the UTP liability. The 2024 and 2023 columns use the pre-ASU 2023-09 format and were ignored."
 }

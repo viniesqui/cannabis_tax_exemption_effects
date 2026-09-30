@@ -19,90 +19,101 @@
       {
         "label": "Expense/(Recovery) based on Statutory Rate (1)",
         "category": "statutory",
+        "reserve_280e_link": "none",
         "amount": -34908.0,
         "percent": 21.0,
         "increases_tax_expense": false,
-        "rationale": "This is the federal statutory 21% rate applied to the pre-tax loss."
+        "rationale": "Tax at the 21% federal statutory rate applied to the pre-tax loss."
       },
       {
         "label": "State and Local Income Taxes",
         "category": "state_local",
+        "reserve_280e_link": "none",
         "amount": 3723.0,
         "percent": -2.2,
         "increases_tax_expense": true,
-        "rationale": "The label identifies it as the state and local income tax effect."
+        "rationale": "Labelled as state and local income taxes."
       },
       {
         "label": "State Prior Year True Up",
         "category": "state_local",
+        "reserve_280e_link": "none",
         "amount": -6625.0,
         "percent": 4.0,
         "increases_tax_expense": false,
-        "rationale": "This is a state income tax true-up of prior-year provisions."
+        "rationale": "Prior-year true-up specifically of state taxes."
       },
       {
         "label": "State Rate Change on Deferreds",
         "category": "state_local",
+        "reserve_280e_link": "none",
         "amount": -1392.0,
         "percent": 0.8,
         "increases_tax_expense": false,
-        "rationale": "This is the state rate change impact on deferred taxes."
+        "rationale": "Effect of state rate changes on deferred taxes."
       },
       {
         "label": "Changes in Valuation Allowances",
         "category": "valuation_allowance",
+        "reserve_280e_link": "none",
         "amount": -695.0,
         "percent": 0.4,
         "increases_tax_expense": false,
-        "rationale": "The label states it is the change in valuation allowances, consistent with release of the $695 allowance shown at 2024 year end."
+        "rationale": "Labelled as changes in valuation allowances; matches release of the $695 prior-year allowance."
       },
       {
         "label": "Uncertain Tax Positions, including penalties and interest",
         "category": "uncertain_tax_positions",
+        "reserve_280e_link": "reserve_attributed",
         "amount": 113291.0,
         "percent": -68.1,
         "increases_tax_expense": true,
-        "rationale": "The label identifies uncertain tax positions; the narrative says the UTP liability relates to the '280E Position', but the line itself is labeled as a UTP reserve rather than a 280E nondeductible item."
+        "rationale": "UTP reserve line; the footnote identifies the reserve as the 280E position: 'recorded an uncertain tax liability ... for tax positions taken based on legal interpretations that challenge the Company's tax liability under Section 280E of the Code (\"280E Position\")' and 'recorded additional uncertain tax liabilities associated with this position and reflected in the tables below' (the rollforwards), but the reconciliation line itself carries no 280E label or marker."
       },
       {
         "label": "Permanent Impacts of Impairments",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 15552.0,
         "percent": -9.4,
         "increases_tax_expense": true,
-        "rationale": "This is a permanent (nondeductible) difference from impairments and is not tied to 280E."
+        "rationale": "Permanent difference from impairments under 'Nontaxable or Nondeductible Items', not tied to 280E."
       },
       {
         "label": "Penalties and Interest",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 134.0,
         "percent": -0.1,
         "increases_tax_expense": true,
-        "rationale": "These are nondeductible penalties and interest ($134 per narrative) on outstanding income tax liabilities, listed under Nontaxable or Nondeductible Items."
+        "rationale": "Listed under 'Nontaxable or Nondeductible Items'; narrative ties the $134 to penalties and interest on outstanding income tax liabilities, not to 280E."
       },
       {
         "label": "Income from Investments",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 451.0,
         "percent": -0.3,
         "increases_tax_expense": true,
-        "rationale": "This is a permanent item listed under Nontaxable or Nondeductible Items and is not tied to 280E."
+        "rationale": "Listed under 'Nontaxable or Nondeductible Items', not tied to 280E."
       },
       {
         "label": "Other Permanent Differences",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 2434.0,
         "percent": -1.5,
         "increases_tax_expense": true,
-        "rationale": "This is a catch-all permanent difference with no attribution to 280E."
+        "rationale": "Generic permanent differences not attributed to 280E."
       },
       {
         "label": "Federal Prior Year True Up",
         "category": "other",
+        "reserve_280e_link": "none",
         "amount": -287.0,
         "percent": 0.2,
         "increases_tax_expense": false,
-        "rationale": "This is a federal return-to-provision true-up, which is neither nondeductible nor state-related."
+        "rationale": "Federal return-to-provision true-up, not a nondeductible item or state tax."
       }
     ]
   },
@@ -112,5 +123,5 @@
     "During the year ended December 31, 2024, the Company recorded an uncertain tax liability in uncertain tax positions on the Consolidated Balance Sheet for tax positions taken based on legal interpretations that challenge the Company's tax liability under Section 280E of the Code (“280E Position”)."
   ],
   "uncertain_tax_position_on_280e": true,
-  "extraction_notes": "All amounts are in thousands. The statement of operations has no separate consolidated net loss line before non-controlling interests. The only net loss line is 'Net Loss Attributable to Verano Holdings Corp. & Subsidiaries' (-257,908), which equals pre-tax loss less provision, so it was used. The income statement prints Provision For Income Taxes as (91,678) even though it is an expense; the footnote total confirms $91,678 of expense, so it is reported as positive. The 2025 rate reconciliation follows prospective ASU 2023-09 adoption. Percentages are printed relative to a pre-tax loss, so items that increase expense show negative percentages; they are transcribed as printed. The 'Nontaxable or Nondeductible Items' header carries no subtotal amount. Sub-lines from Uncertain Tax Positions through Other Permanent Differences appear beneath it, but indentation is ambiguous; UTP was classified separately as uncertain_tax_positions. Line items sum exactly to the $91,678 total. There is no explicitly labeled 280E line in 2025; the 2023 comparative showed 'Nondeductible 280E' of 79,731. The company takes the position that 280E does not limit its deductions and carries an uncertain tax liability for the '280E Position' ($378,261 at 12/31/2025; gross unrecognized tax benefits $473,664). The 2025 UTP reconciling line (113,291, including penalties and interest) therefore economically represents the 280E exposure, but it was not classified as section_280e because the line is labeled as a UTP reserve. Footnote (1) on the statutory line says Florida state taxes make up the majority of 'this category'; this appears to be a mis-placed ASU 2023-09 state-tax disclosure. The company is under IRS audit for 2021-2022."
+  "extraction_notes": "Unit scale: the excerpted table headers do not state the scale; unit_multiplier=1000 (thousands) is inferred from internal consistency (net loss $257,908 / 360.9M weighted shares = $0.71 per share as printed) and should be verified against the filing header. Net income: no separate consolidated net loss line exists; the only bottom line is 'Net Loss Attributable to Verano Holdings Corp. & Subsidiaries' (-257,908), used as net_income; the pre-tax line is captioned 'before Provision for Income Taxes and Non-Controlling Interest'. Income tax expense is printed on the statement as (91,678) (deducted from pre-tax loss) but is an expense per the footnote total ($91,678), so reported as +91,678. FY2025 reconciliation adopted ASU 2023-09 prospectively; 2024/2023 comparatives are in the old format (2023 showed an explicit 'Nondeductible 280E' line of 79,731; 2024 and 2025 instead show the 280E cost via the uncertain tax position line). 'Nontaxable or Nondeductible Items' is a header with no amount; its sub-lines are reported individually. The UTP line (113,291; -68.1%) includes penalties and interest (rollforward shows $37,214 interest and penalties on UTPs in 2025) and is the principal 280E cost, but no line is labelled 280E; hence no section_280e line. Percentages are reported as printed: because pre-tax result is a loss, items increasing expense show negative rates; effective rate is (55.2)%. Footnote (1) on the statutory line states Florida state taxes make up the majority of 'this category' (placement appears to relate to state taxes). Line amounts sum exactly to the $91,678 total. Gross unrecognized tax benefits were $473,664 and uncertain tax liabilities $378,261 at 12/31/2025; company is under IRS audit for 2021-2022."
 }

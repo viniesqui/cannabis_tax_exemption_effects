@@ -19,58 +19,65 @@
       {
         "label": "U.S. Federal Statutory Tax Rate",
         "category": "statutory",
+        "reserve_280e_link": "none",
         "amount": 55305.0,
         "percent": 21.0,
         "increases_tax_expense": true,
-        "rationale": "Starting line of the reconciliation: expected tax at the 21.00% U.S. federal statutory rate."
+        "rationale": "This is the tax at the 21% U.S. federal statutory rate that the reconciliation starts from."
       },
       {
         "label": "State and Local Income Taxes, Net of Federal Income Tax Effect (a)",
         "category": "state_local",
+        "reserve_280e_link": "none",
         "amount": 14154.0,
         "percent": 5.37,
         "increases_tax_expense": true,
-        "rationale": "Label identifies state and local income taxes net of federal effect; footnote (a) cites Illinois, Maryland and Pennsylvania."
+        "rationale": "The line covers state and local income taxes, and footnote (a) notes Illinois, Maryland and Pennsylvania make up the majority of it."
       },
       {
         "label": "Changes in Valuation Allowances",
         "category": "valuation_allowance",
+        "reserve_280e_link": "none",
         "amount": -450.0,
         "percent": -0.17,
         "increases_tax_expense": false,
-        "rationale": "Label explicitly refers to changes in valuation allowances."
+        "rationale": "The line is labelled as changes in valuation allowances."
       },
       {
         "label": "Nontaxable or Nondeductible Items",
         "category": "nondeductible_other",
+        "reserve_280e_link": "none",
         "amount": 10110.0,
         "percent": 3.84,
         "increases_tax_expense": true,
-        "rationale": "Permanent-difference line with no label, parenthetical, footnote marker or narrative explicitly attributing it to Section 280E, and no sub-lines are disaggregated."
+        "rationale": "It is a permanent-item line that is not disaggregated, and neither its label nor the narrative explicitly attributes it to Section 280E."
       },
       {
         "label": "Changes in Unrecognized Tax Benefits",
         "category": "uncertain_tax_positions",
+        "reserve_280e_link": "narrative_only",
         "amount": 75030.0,
         "percent": 28.49,
         "increases_tax_expense": true,
-        "rationale": "Label refers to unrecognized tax benefits; narrative states the IRS's 280E contention 'results in unrecognized tax benefits', but the line is classified by its nature as an uncertain tax position item."
+        "rationale": "This is an unrecognized-tax-benefit reserve line, and the footnote says only generally that 280E 'results in unrecognized tax benefits which can cause the effective tax rate to be highly variable' without identifying the reserve, its rollforward or any amount as the 280E position."
       },
       {
         "label": "Other Adjustments - Federal",
         "category": "other",
+        "reserve_280e_link": "none",
         "amount": -8292.0,
         "percent": -3.15,
         "increases_tax_expense": false,
-        "rationale": "Generic federal other adjustments with no further attribution."
+        "rationale": "It is an unspecified other federal adjustment."
       },
       {
         "label": "Other Adjustments - States",
-        "category": "state_local",
+        "category": "other",
+        "reserve_280e_link": "none",
         "amount": 1445.0,
         "percent": 0.55,
         "increases_tax_expense": true,
-        "rationale": "Adjustment relates specifically to state taxes, so grouped with state and local."
+        "rationale": "It is presented as a separate 'Other Adjustments' line distinct from the state and local income tax category, so it is classified as other."
       }
     ]
   },
@@ -79,5 +86,5 @@
     "This results in unrecognized tax benefits which can cause the effective tax rate to be highly variable and may not necessarily correlate with pre-tax income or loss."
   ],
   "uncertain_tax_position_on_280e": true,
-  "extraction_notes": "Income statement figures taken from the selected consolidated results table (in thousands) presented alongside Item 8; the consolidated pre-NCI line 'Net Income Before Non-Controlling Interest' ($116,053K) was used, with $1,901K attributable to NCI and $114,152K attributable to GTI. Rate reconciliation (dollars in thousands and percentages) does not print pre-tax income; the statutory line $55,305K is consistent with 21% of $263,355K but reconciliation pretax_income is left null as not printed. Line items sum to the $147,302K total (55.93% ETR). No line in the reconciliation is explicitly labeled or footnoted as Section 280E; 280E effects are likely embedded in 'Nontaxable or Nondeductible Items' ($10,110K, 3.84%) and/or 'Changes in Unrecognized Tax Benefits' ($75,030K, 28.49%), but the filing does not quantify the split, so the nondeductible line is classified nondeductible_other. The footnote states the IRS contends the Company is subject to 280E and that this 'results in unrecognized tax benefits', implying the Company files taking the position that 280E does not apply; it does not explicitly state that returns or refund claims were filed. UTB balance rose from $76,782K to $203,348K in 2025 (prior-period gross increases $64,042K; current-period $84,975K); accrued interest and penalties $25,207K; $22,806K of UTBs expected to be recovered within 12 months. Income taxes paid in 2025 were only $30,214K versus $147,302K provision. 'Other Adjustments - States' classified as state_local (judgment call; could alternatively be 'other'). Percentages shown in the table for 2025 (e.g., state 5.37%) are transcribed as printed even where they do not precisely equal amount/pretax."
+  "extraction_notes": "All figures are in thousands of USD for FY2025. Consolidated net income before NCI is 116,053; net income attributable to GTI is 114,152. The rate reconciliation does not print a pre-tax income line, so rate_reconciliation.pretax_income is null (statement pretax income is 263,355). The reconciling lines sum exactly to the 147,302 total, and the 55.93% effective rate is printed. There is no separate Section 280E line. The 280E effect is not disaggregated and appears to be embedded in 'Changes in Unrecognized Tax Benefits' (75,030; 28.49%) and possibly in 'Nontaxable or Nondeductible Items' (10,110; 3.84%). The footnote ties 280E to unrecognized tax benefits only in general terms. The UTB rollforward shows a balance of 76,782 at the beginning of the year and 203,348 at the end, with no 280E-labelled row. Accrued interest and penalties total 25,207, and 22,806 of unrecognized tax benefits are expected to be recovered within 12 months. uncertain_tax_position_on_280e=true is an inference, not an explicit statement. The footnote does not expressly say that returns were filed treating 280E as inapplicable. Instead it states that the IRS contends 280E applies and that this results in unrecognized tax benefits, which implies the company takes a filing position contrary to 280E. 'Other Adjustments - States' (1,445) is classified as other rather than state_local because it is presented separately from the state and local tax line; analysts may choose to combine them. Income taxes paid in 2025 were 30,214, well below current tax expense of 128,582, which is consistent with UTB accrual."
 }
